@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
 const NavBar = () => {
   return (
@@ -8,21 +8,25 @@ const NavBar = () => {
       height="100vh"
       position="absolute"
       left={0}
+      justifyContent="center"
     >
-      <Box
+      <Flex
         style={{
           transform: 'rotate(-90deg) translateX(0) translateZ(0)',
-          transformOrigin: 'left',
+          transformOrigin: 'right',
         }}
         position="absolute"
-        top={10}
-        left={10}
+        height="100px"
         textAlign="end"
+        direction="column"
+        justifyContent="center"
+        left={-1}
+        top={-8}
       >
         <Text color="white">Store</Text>
         <Text color="white">Contact</Text>
         <Text color="white">About</Text>
-      </Box>
+      </Flex>
     </Flex>
   );
 };

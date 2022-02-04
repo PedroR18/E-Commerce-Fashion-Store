@@ -8,6 +8,7 @@ const Banner = () => {
       width="100vw"
       height="100vh"
       justifyContent="center"
+      scrollSnapAlign="start"
       alignItems="center"
     >
       <NavBar />
