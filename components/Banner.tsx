@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Image } from '@chakra-ui/react';
 import { AiOutlineShopping } from 'react-icons/ai';
-import NavBar from './NavBar';
+import SideBar from './SideBar';
 
 const Banner = () => {
   return (
@@ -11,7 +11,7 @@ const Banner = () => {
       scrollSnapAlign="start"
       alignItems="center"
     >
-      <NavBar />
+      <SideBar />
       <Box width="100vw" height="100vh" overflow="hidden">
         <Image src="/banner.jpg" alt="Suit" />
       </Box>

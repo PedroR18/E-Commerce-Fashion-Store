@@ -1,9 +1,10 @@
 import { Flex } from '@chakra-ui/react';
+import NavBar from './NavBar';
 
 const StoreFront = () => {
   return (
-    <Flex height="100vh" width="100vw" bgColor="grey" scrollSnapAlign="start">
-      <p>StoreFront</p>
+    <Flex height="100vh" width="100vw" scrollSnapAlign="start">
+      <NavBar />
     </Flex>
   );
 };

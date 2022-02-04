@@ -1,32 +1,27 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Button, Flex } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+import { AiOutlineShopping } from 'react-icons/ai';
+import Logo from './Logo';
+
+const MotionFlex = motion(Flex);
 
 const NavBar = () => {
   return (
     <Flex
+      height={100}
       bgColor="grey"
-      width="100px"
-      height="100vh"
-      position="absolute"
-      left={0}
-      justifyContent="center"
+      width="100vw"
+      justifyContent="space-between"
+      alignItems="center"
+      paddingX={20}
     >
-      <Flex
-        style={{
-          transform: 'rotate(-90deg) translateX(0) translateZ(0)',
-          transformOrigin: 'right',
-        }}
-        position="absolute"
-        height="100px"
-        textAlign="end"
-        direction="column"
-        justifyContent="center"
-        left={-1}
-        top={-8}
-      >
-        <Text color="white">Store</Text>
-        <Text color="white">Contact</Text>
-        <Text color="white">About</Text>
-      </Flex>
+      <Logo />
+      <MotionFlex gap={10}>
+        <Button>Store</Button>
+        <Button>About</Button>
+        <Button>Contact</Button>
+      </MotionFlex>
+      <AiOutlineShopping size={50} />
     </Flex>
   );
 };
