@@ -14,6 +14,8 @@ const NavBar = () => {
       justifyContent="space-between"
       alignItems="center"
       paddingX={20}
+      position="sticky"
+      top="0"
     >
       <Logo />
       <MotionFlex gap={10}>

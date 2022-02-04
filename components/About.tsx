@@ -1,4 +1,5 @@
-import { Flex } from '@chakra-ui/react';
+import { Box, Flex, Image } from '@chakra-ui/react';
+import AboutGrid from './AboutGrid';
 
 const About = () => {
   return (
@@ -6,13 +7,21 @@ const About = () => {
       height="100vh"
       width="100vw"
       scrollSnapAlign="start"
-      bgColor="green"
       justifyContent="center"
       alignItems="center"
       direction="column"
     >
-      <p>About</p>
-      <p>Put that square image things that animates on scroll in the center</p>
+      <Box height="750px" width="750px" position="relative">
+        <AboutGrid />
+        <Image
+          src="/about-grid-1.jpg"
+          alt="!!PLACEHOLDER!!"
+          filter="grayscale(1)"
+          position="absolute"
+          top={0}
+          visibility="hidden"
+        />
+      </Box>
     </Flex>
   );
 };
