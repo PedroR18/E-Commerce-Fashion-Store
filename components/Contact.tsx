@@ -12,13 +12,14 @@ const Contact = () => {
       position="relative"
     >
       <Image
-        src="/contact-background.jpg"
+        src="/contact-background.png"
         alt="Background Texture"
         minHeight="100%"
         minWidth="100%"
         maxHeight="100vh"
         maxWidth="100vw"
         position="absolute"
+        objectFit="cover"
       />
       <Flex
         height="500px"

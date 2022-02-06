@@ -11,127 +11,127 @@ const AboutGrid = () => {
       zIndex={10}
     >
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.jpg)"
+        bgImage="url(/about-grid-1.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />

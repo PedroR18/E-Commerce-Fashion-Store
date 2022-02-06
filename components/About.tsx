@@ -67,9 +67,8 @@ const About = () => {
         <AboutGrid />
         <Fade in={reveal}>
           <Image
-            src="/about-grid-1.jpg"
+            src="/about-grid-1.png"
             alt="!!PLACEHOLDER!!"
-            filter="grayscale(1)"
             position="absolute"
             top={0}
             visibility={reveal ? 'visible' : 'hidden'}
