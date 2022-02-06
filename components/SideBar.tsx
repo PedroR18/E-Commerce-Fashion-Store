@@ -13,17 +13,26 @@ const SideBar = () => {
       <Flex
         style={{
           transform: 'rotate(-90deg) translateX(0) translateZ(0)',
-          transformOrigin: 'right',
         }}
-        position="absolute"
         height="100px"
         textAlign="end"
         direction="column"
         justifyContent="center"
-        left={-1}
-        top={-8}
+        position="absolute"
+        top={0}
       >
-        <Text color="white">Something</Text>
+        <Text color="white" _hover={{ color: 'black' }} cursor="pointer">
+          FACEBOOK
+        </Text>
+        <Text color="white" _hover={{ color: 'black' }} cursor="pointer">
+          TWITTER
+        </Text>
+        <Text color="white" _hover={{ color: 'black' }} cursor="pointer">
+          INSTAGRAM
+        </Text>
+        <Text color="white" _hover={{ color: 'black' }} cursor="pointer">
+          PINTAREST
+        </Text>
       </Flex>
     </Flex>
   );

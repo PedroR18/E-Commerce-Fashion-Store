@@ -1,4 +1,12 @@
-import { Box, Fade, Flex, Image, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Fade,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  Text,
+} from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
 import AboutGrid from './AboutGrid';
 
@@ -23,16 +31,25 @@ const About = () => {
   }, []);
 
   return (
-    <Flex
+    <Grid
+      justifyContent="center"
       height="100vh"
       width="100vw"
       scrollSnapAlign="start"
-      justifyContent="space-around"
+      gridTemplateColumns="1fr auto 1fr"
+      gridTemplateRows="100%"
       alignItems="center"
       direction="row"
+      position="relative"
     >
-      <Box height="750px" width="300px">
-        <Text height="100%" width="100%" textAlign="justify">
+      <GridItem
+        height="100%"
+        width="100%"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Text height="750px" width="300px" textAlign="justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
           praesentium unde numquam ea autem, iure quam eos vero molestiae
           incidunt illum, quia, cum placeat tempora hic corporis est ex. Natus?
@@ -49,10 +66,16 @@ const About = () => {
           Repudiandae quo voluptatum vel, distinctio autem fuga vitae reiciendis
           ratione odit, deserunt temporibus nihil, perspiciatis voluptatibus
           accusamus! Delectus optio eos, debitis velit voluptatem corrupti
-          aspernatur fugiat dolore error quam. Laboriosam.
+          aspernatur fugiat dolore error quam. Laboriosam. Lorem ipsum, dolor
+          sit amet consectetur adipisicing elit. Assumenda, doloribus eaque quae
+          amet, culpa, possimus placeat sint cupiditate tempore officiis
+          inventore illum laboriosam. Nisi tempore in quasi temporibus magnam
+          expedita? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Sapiente, hic exercitationem laborum consequatur quasi saepe.
         </Text>
-      </Box>
-      <Box height="750px" width="750px" position="relative">
+      </GridItem>
+
+      <GridItem height="750px" width="750px" position="relative">
         <Box
           position="absolute"
           height="100%"
@@ -78,18 +101,31 @@ const About = () => {
             minWidth="100%"
           />
         </Fade>
-      </Box>
-      <Box
-        height="750px"
-        width="300px"
-        style={{
-          transform: 'rotate(-90deg) translateX(0) translateZ(0)',
-          transformOrigin: 'right',
-        }}
-      >
-        <Text fontSize="8em">TEXT</Text>
-      </Box>
-    </Flex>
+      </GridItem>
+      <Image
+        src="/about-texture-1.png"
+        alt="Rose"
+        height="800px"
+        width="500px"
+        objectFit="cover"
+        zIndex={-5}
+        position="absolute"
+        top={0}
+        right={60}
+      />
+
+      <GridItem height="750px" width="100%" position="relative">
+        <Heading
+          fontSize="9em"
+          letterSpacing=".5em"
+          position="absolute"
+          bottom={0}
+          left={150}
+        >
+          FAME
+        </Heading>
+      </GridItem>
+    </Grid>
   );
 };
 export default About;

@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image } from '@chakra-ui/react';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 
 const GenreSeparator = () => {
@@ -21,23 +21,29 @@ const GenreSeparator = () => {
           height="100vh"
           overflow="hidden"
         >
-          <Image src="/home-female.png" alt="female" align="0 -340px" />
+          <Image
+            src="/home-female.png"
+            alt="female"
+            align="0 -340px"
+            transform={active === 'left' ? 'scale(1.1)' : 'none'}
+            transition=".2s ease-in"
+          />
         </Box>
 
-        <Heading
+        <Text
           fontSize="7em"
           color="blackAlpha.800"
-          textDecoration={active === 'left' ? 'none' : 'overline'}
+          textDecoration={active === 'left' ? 'none' : 'underline'}
           textDecorationColor="blackAlpha.800"
           position="absolute"
           style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
           right={10}
-          bottom={20}
+          bottom={6}
           transition="transform .2s ease-in"
-          transform={active === 'left' ? 'scale(1.2)' : 'none'}
+          transform={active === 'left' ? 'scale(1.05)' : 'none'}
         >
           HER
-        </Heading>
+        </Text>
       </Flex>
 
       <Flex
@@ -56,22 +62,28 @@ const GenreSeparator = () => {
           height="100vh"
           overflow="hidden"
         >
-          <Image src="/home-male.png" alt="male" align="0 -400px" />
+          <Image
+            src="/home-male.png"
+            alt="male"
+            align="0 -400px"
+            transform={active === 'right' ? 'scale(1.1)' : 'none'}
+            transition=".2s ease-in"
+          />
         </Box>
-        <Heading
+        <Text
           color="blackAlpha.800"
           textDecoration={active === 'right' ? 'none' : 'underline'}
           textDecorationColor="blackAlpha.800"
           fontSize="7em"
           position="absolute"
           left={10}
-          top={20}
+          top={6}
           style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
           transition="transform .2s ease-in"
-          transform={active === 'right' ? 'scale(1.2)' : 'none'}
+          transform={active === 'right' ? 'scale(1.05)' : 'none'}
         >
           HIM
-        </Heading>
+        </Text>
       </Flex>
     </Flex>
   );

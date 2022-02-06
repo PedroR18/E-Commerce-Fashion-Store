@@ -3,6 +3,7 @@ import { extendTheme } from '@chakra-ui/react';
 const theme = extendTheme({
   fonts: {
     heading: 'Anurati',
+    body: 'Oswald',
   },
   styles: {
     global: {

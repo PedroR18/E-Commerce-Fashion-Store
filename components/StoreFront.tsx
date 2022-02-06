@@ -64,8 +64,11 @@ const StoreFront = () => {
             justifyContent="center"
             alignItems="center"
             direction="column"
-            gap={14}
+            gap="40"
             width="40%"
+            height="700px"
+            position="relative"
+            top={75}
           >
             <Text textAlign="center">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est nemo
