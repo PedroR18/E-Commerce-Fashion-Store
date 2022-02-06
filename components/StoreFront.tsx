@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  Heading,
-  Image,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, Grid, Image, Text } from '@chakra-ui/react';
 import { AiOutlineDown } from 'react-icons/ai';
 
 const StoreFront = () => {
@@ -75,7 +67,6 @@ const StoreFront = () => {
             gap={14}
             width="40%"
           >
-            <Heading>NAME</Heading>
             <Text textAlign="center">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est nemo
               rem eaque voluptatum iste rerum impedit dolorem officiis magnam
