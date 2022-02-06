@@ -1,4 +1,5 @@
 import { Flex, Text } from '@chakra-ui/react';
+import { FaCircle, FaRegCircle } from 'react-icons/fa';
 
 const SideBar = () => {
   return (
@@ -6,9 +7,10 @@ const SideBar = () => {
       bgColor="blackAlpha.600"
       width="100px"
       height="100vh"
-      position="absolute"
+      position="fixed"
       left={0}
       justifyContent="center"
+      zIndex={100}
     >
       <Flex
         style={{
@@ -33,6 +35,21 @@ const SideBar = () => {
         <Text color="white" _hover={{ color: 'black' }} cursor="pointer">
           PINTAREST
         </Text>
+      </Flex>
+
+      <Flex
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        position="absolute"
+        bottom={10}
+        gap={2}
+      >
+        <FaCircle color="white" />
+        <FaRegCircle color="white" />
+        <FaRegCircle color="white" />
+        <FaRegCircle color="white" />
+        <FaRegCircle color="white" />
       </Flex>
     </Flex>
   );

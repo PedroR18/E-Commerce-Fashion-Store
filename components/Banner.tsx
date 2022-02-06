@@ -1,6 +1,5 @@
 import { Box, Flex, Heading, Image } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import SideBar from './SideBar';
 
 const Banner = () => {
   const [active, setActive] = useState(false);
@@ -24,7 +23,6 @@ const Banner = () => {
       scrollSnapAlign="start"
       alignItems="center"
     >
-      <SideBar />
       <Box width="100vw" height="100vh" overflow="hidden">
         <Image
           src="/banner.png"
@@ -40,15 +38,7 @@ const Banner = () => {
         onMouseLeave={() => setActive(false)}
       >
         <Heading
-          color={
-            position
-              ? active
-                ? 'black'
-                : 'transparent'
-              : active
-              ? 'white'
-              : 'transparent'
-          }
+          color={position ? 'black' : active ? 'white' : 'transparent'}
           fontSize="10em"
           letterSpacing=".5em"
           marginLeft=".5em"
