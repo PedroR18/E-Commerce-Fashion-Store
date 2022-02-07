@@ -11,6 +11,7 @@ const theme = extendTheme({
         scrollSnapType: 'y mandatory',
         scrollSnapPointsY: 'repeat(100vh)',
         overflowX: 'hidden',
+        scrollBehavior: 'smooth',
       },
     },
   },
