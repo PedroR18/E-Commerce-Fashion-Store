@@ -1,7 +1,20 @@
 import { Box, Button, Flex, Grid, Image, Text } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import { AiOutlineDown } from 'react-icons/ai';
 
+const scrollFun = (to: number) => {
+  if (typeof window !== undefined) {
+    window.scrollTo(0, to);
+  }
+};
+
 const StoreFront = () => {
+  const [pageHeight, setPageHeight] = useState(0);
+
+  useEffect(() => {
+    setPageHeight(window.innerHeight);
+  }, []);
+
   return (
     <Flex height="100vh" width="100vw" scrollSnapAlign="start">
       <Grid
@@ -117,9 +130,48 @@ const StoreFront = () => {
                 gap={10}
                 marginLeft={10}
               >
-                <Text borderBottom="1px solid black">STORE</Text>
-                <Text borderBottom="1px solid black">CONTACT</Text>
-                <Text borderBottom="1px solid black">ABOUT</Text>
+                <Text
+                  fontSize="1.2em"
+                  borderBottom="1px solid black"
+                  cursor="pointer"
+                  _hover={{
+                    transform: 'scale(1.2)',
+                    transition: '.3s ease-in',
+                  }}
+                  onClick={() => {
+                    scrollFun(pageHeight * 2);
+                  }}
+                >
+                  STORE
+                </Text>
+                <Text
+                  fontSize="1.2em"
+                  borderBottom="1px solid black"
+                  cursor="pointer"
+                  _hover={{
+                    transform: 'scale(1.2)',
+                    transition: '.3s ease-in',
+                  }}
+                  onClick={() => {
+                    scrollFun(pageHeight * 3);
+                  }}
+                >
+                  ABOUT
+                </Text>
+                <Text
+                  fontSize="1.2em"
+                  borderBottom="1px solid black"
+                  cursor="pointer"
+                  _hover={{
+                    transform: 'scale(1.2)',
+                    transition: '.3s ease-in',
+                  }}
+                  onClick={() => {
+                    scrollFun(pageHeight * 4);
+                  }}
+                >
+                  CONTACT
+                </Text>
               </Flex>
               <Image
                 src="lines.svg"
@@ -128,6 +180,7 @@ const StoreFront = () => {
                 right="-16"
                 bottom={-110}
                 loading="eager"
+                zIndex={-10}
               />
             </Flex>
           </Flex>
