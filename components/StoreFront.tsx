@@ -129,7 +129,7 @@ const StoreFront = () => {
                 width="100%"
                 justifyContent="start"
                 alignItems="center"
-                gap={10}
+                gap={8}
                 marginLeft={10}
               >
                 <Text
@@ -158,7 +158,7 @@ const StoreFront = () => {
                     scrollFun(pageHeight * 3);
                   }}
                 >
-                  ABOUT
+                  EXCLUSIVE
                 </Text>
                 <Text
                   fontSize="1.2em"

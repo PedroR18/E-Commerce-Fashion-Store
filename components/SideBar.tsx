@@ -74,7 +74,7 @@ const SideBar = () => {
           INSTAGRAM
         </Text>
         <Text color="white" _hover={{ color: 'black' }} cursor="pointer">
-          PINTAREST
+          LINKEDIN
         </Text>
       </Flex>
 

@@ -1,6 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
-import '@fontsource/roboto-condensed';
 import type { AppProps } from 'next/app';
 import theme from '../theme/theme';
 

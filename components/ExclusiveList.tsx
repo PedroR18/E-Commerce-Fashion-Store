@@ -14,15 +14,6 @@ const ExclusiveList = () => {
   const [reveal, setReveal] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ x: 0, y: 0 });
   const ref = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState(0);
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY / 4 === window.innerHeight) {
-        setPosition(window.innerHeight);
-      } else setPosition(0);
-    });
-  }, []);
 
   useEffect(() => {
     const setCoordinates = (mouse: MouseEvent) => {
@@ -45,42 +36,38 @@ const ExclusiveList = () => {
       height="100vh"
       width="100vw"
       scrollSnapAlign="start"
-      gridTemplateColumns="1fr auto 1fr"
+      gridTemplateColumns="100px 1fr auto 1fr"
       gridTemplateRows="100%"
       alignItems="center"
       direction="row"
       position="relative"
     >
+      <GridItem height="100%" width="100px" />
       <GridItem
-        height="100%"
-        width="100%"
+        height="50%"
+        width="60%"
         display="flex"
-        alignItems="center"
+        alignItems="start"
         justifyContent="center"
+        flexDirection="column"
+        margin="0 auto"
+        gap={2}
       >
-        <Text height="750px" width="300px" textAlign="justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-          praesentium unde numquam ea autem, iure quam eos vero molestiae
-          incidunt illum, quia, cum placeat tempora hic corporis est ex. Natus?
-          Voluptatem sequi, error veniam nihil eos esse distinctio reprehenderit
-          quos consequuntur incidunt nesciunt rem, repellat nemo explicabo?
-          Voluptatibus blanditiis iste quam voluptatem molestias iusto atque
-          esse itaque pariatur, repudiandae possimus! Ad earum quis tempora a
-          mollitia suscipit animi enim, iure praesentium incidunt quaerat eius
-          exercitationem! Voluptas, eveniet iusto. Velit, explicabo! Eaque vero
-          ab quia unde beatae inventore. Beatae, perferendis. Fugit? Harum,
-          tenetur porro sint quas cumque fugiat tempore incidunt officia? Enim,
-          repellendus ea illo id laudantium porro rerum alias illum nostrum
-          aperiam deleniti reiciendis consectetur maxime aut odio harum nobis.
-          Repudiandae quo voluptatum vel, distinctio autem fuga vitae reiciendis
-          ratione odit, deserunt temporibus nihil, perspiciatis voluptatibus
-          accusamus! Delectus optio eos, debitis velit voluptatem corrupti
-          aspernatur fugiat dolore error quam. Laboriosam. Lorem ipsum, dolor
-          sit amet consectetur adipisicing elit. Assumenda, doloribus eaque quae
-          amet, culpa, possimus placeat sint cupiditate tempore officiis
-          inventore illum laboriosam. Nisi tempore in quasi temporibus magnam
-          expedita? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Sapiente, hic exercitationem laborum consequatur quasi saepe.
+        <Text fontSize="4em" lineHeight="1.2em">
+          GET THE NEW COLLECTION FIRST
+        </Text>
+        <Text fontSize="2em" color="blackAlpha.800">
+          Join a select group of 25 lucky members
+        </Text>
+        <Text
+          fontSize="1.5em"
+          cursor="pointer"
+          fontWeight="bold"
+          borderBottom="2px solid black"
+          transition=".4s ease-in"
+          _hover={{ transform: 'scale(1.1)' }}
+        >
+          Join Waiting List
         </Text>
       </GridItem>
 
@@ -112,7 +99,7 @@ const ExclusiveList = () => {
         </Fade>
       </GridItem>
       <Image
-        src="/exclusive-texture-1.png"
+        src="/exclusive-texture.png"
         alt="Rose"
         height="800px"
         width="500px"
@@ -132,12 +119,10 @@ const ExclusiveList = () => {
           left={150}
           transition=".4s ease-in"
           style={{
-            transform: position
-              ? `translate(0px, ${position}px) scale(1.3)`
-              : 'none',
-            color: position ? 'white' : 'black',
+            color: 'black',
           }}
           zIndex={100}
+          _hover={{ transform: 'scale(1.25)' }}
         >
           FLEX
         </Heading>
