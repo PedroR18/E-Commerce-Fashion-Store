@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid, Image, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { AiOutlineDown } from 'react-icons/ai';
 
@@ -73,28 +73,29 @@ const StoreFront = () => {
             zIndex={-10}
           />
           <Flex
-            p={5}
+            gap={12}
             justifyContent="center"
             alignItems="center"
             direction="column"
-            gap="40"
             width="40%"
             height="700px"
             position="relative"
-            top={75}
-            bgColor="white"
-            opacity=".7"
           >
-            <Text textAlign="center">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est nemo
-              rem eaque voluptatum iste rerum impedit dolorem officiis magnam
-              exercitationem aut ut nesciunt quidem, autem, asperiores debitis,
-              unde cupiditate quae. Illum mollitia architecto tempore dolores
-              voluptatem quasi dolore, autem quod minima nihil ad ea dolorum
-              voluptates voluptas cum officiis vitae sunt commodi quis velit
-              magni! Quo necessitatibus hic tempore minima.
+            <Text fontSize="4em">DRESS TO IMPRESS</Text>
+            <Text textAlign="center" fontSize="1.5em">
+              Your appearance is a reflection of who you are. So make a
+              statement and show your true self...
             </Text>
-            <Button>Shop new arrivals</Button>
+            <Text
+              fontSize="1.5em"
+              cursor="pointer"
+              fontWeight="bold"
+              borderBottom="2px solid black"
+              transition=".4s ease-in"
+              _hover={{ transform: 'scale(1.1)' }}
+            >
+              Shop new arrivals
+            </Text>
           </Flex>
           <Box
             position="absolute"
