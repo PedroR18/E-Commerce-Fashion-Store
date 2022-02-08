@@ -82,6 +82,8 @@ const StoreFront = () => {
             height="700px"
             position="relative"
             top={75}
+            bgColor="white"
+            opacity=".7"
           >
             <Text textAlign="center">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est nemo

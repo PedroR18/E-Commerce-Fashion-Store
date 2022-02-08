@@ -27,9 +27,10 @@ const Banner = () => {
         <Image
           src="/banner.png"
           alt="Suit"
-          minHeight="100%"
-          minWidth="100%"
+          minHeight="100vh"
+          minWidth="100vh"
           align="0 -400px"
+          objectFit="cover"
         />
       </Box>
       <Flex
@@ -57,7 +58,7 @@ const Banner = () => {
           }}
           cursor="default"
         >
-          FAME
+          FLEX
         </Heading>
       </Flex>
     </Flex>

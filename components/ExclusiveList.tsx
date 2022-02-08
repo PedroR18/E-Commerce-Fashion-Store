@@ -8,12 +8,21 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
-import AboutGrid from './AboutGrid';
+import ExclusiveListGrid from './ExclusiveListGrid';
 
-const About = () => {
+const ExclusiveList = () => {
   const [reveal, setReveal] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ x: 0, y: 0 });
   const ref = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY / 4 === window.innerHeight) {
+        setPosition(window.innerHeight);
+      } else setPosition(0);
+    });
+  }, []);
 
   useEffect(() => {
     const setCoordinates = (mouse: MouseEvent) => {
@@ -87,11 +96,11 @@ const About = () => {
           onMouseOut={() => setReveal(false)}
           ref={ref}
         />
-        <AboutGrid />
+        <ExclusiveListGrid />
         <Fade in={reveal}>
           <Image
-            src="/about-grid-1.png"
-            alt="!!PLACEHOLDER!!"
+            src="/ex-list-grid.png"
+            alt="Man with golden chain"
             position="absolute"
             top={0}
             visibility={reveal ? 'visible' : 'hidden'}
@@ -103,7 +112,7 @@ const About = () => {
         </Fade>
       </GridItem>
       <Image
-        src="/about-texture-1.png"
+        src="/exclusive-texture-1.png"
         alt="Rose"
         height="800px"
         width="500px"
@@ -121,11 +130,19 @@ const About = () => {
           position="absolute"
           bottom={0}
           left={150}
+          transition=".4s ease-in"
+          style={{
+            transform: position
+              ? `translate(0px, ${position}px) scale(1.3)`
+              : 'none',
+            color: position ? 'white' : 'black',
+          }}
+          zIndex={100}
         >
-          FAME
+          FLEX
         </Heading>
       </GridItem>
     </Grid>
   );
 };
-export default About;
+export default ExclusiveList;

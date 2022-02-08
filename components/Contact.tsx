@@ -1,4 +1,13 @@
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  FormControl,
+  Image,
+  Input,
+  Text,
+  Textarea,
+} from '@chakra-ui/react';
 
 const Contact = () => {
   return (
@@ -26,19 +35,67 @@ const Contact = () => {
         width="500px"
         bgColor="white"
         zIndex="10"
-        justifyContent="space-between"
+        justifyContent="center"
+        gap={10}
         alignItems="center"
         direction="column"
+        boxShadow="2xl"
+        opacity=".7"
       >
-        <Text>Some Text</Text>
-        <Text>Text</Text>
-        <Text>Some more Text</Text>
-      </Flex>
-      <Box position="absolute" right={50} bottom={0}>
-        <Text fontSize="15em" color="white">
-          TEXT
+        <Text fontSize="2.5em" letterSpacing=".2em">
+          CONTACT US
         </Text>
-      </Box>
+        <FormControl
+          width="80%"
+          display="flex"
+          flexDirection="column"
+          gap={3}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Flex
+            gap={3}
+            justifyContent="center"
+            alignItems="center"
+            width="100%"
+          >
+            <Input
+              id="email"
+              placeholder="EMAIL"
+              transition=".5s ease-in"
+              border="black solid 2px"
+              borderColor="blackAlpha.800"
+            />
+            <Input
+              id="name"
+              placeholder="NAME"
+              transition=".5s ease-in"
+              border="black solid 2px"
+              borderColor="blackAlpha.800"
+            />
+          </Flex>
+          <Textarea
+            id="message"
+            placeholder="MESSAGE"
+            resize="none"
+            rows={6}
+            transition=".5s ease-in"
+            border="black solid 2px"
+            borderColor="blackAlpha.800"
+          />
+          <Button
+            letterSpacing=".2em"
+            fontSize="1.2em"
+            transition=".5s ease-in"
+            border="black solid 2px"
+            borderColor="blackAlpha.800"
+            width="30%"
+          >
+            SEND
+          </Button>
+        </FormControl>
+      </Flex>
+      <Box position="absolute" right={50} bottom={0}></Box>
     </Flex>
   );
 };

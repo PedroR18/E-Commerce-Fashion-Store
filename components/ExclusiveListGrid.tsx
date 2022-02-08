@@ -1,6 +1,6 @@
 import { Grid, GridItem } from '@chakra-ui/react';
 
-const AboutGrid = () => {
+const ExclusiveListGrid = () => {
   return (
     <Grid
       h="100%"
@@ -11,131 +11,131 @@ const AboutGrid = () => {
       zIndex={10}
     >
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/about-grid-1.png)"
+        bgImage="url(/ex-list-grid.png)"
         bgSize="cover"
         filter="grayscale(1)"
       />
     </Grid>
   );
 };
-export default AboutGrid;
+export default ExclusiveListGrid;
