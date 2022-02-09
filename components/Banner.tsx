@@ -23,14 +23,21 @@ const Banner = () => {
       scrollSnapAlign="start"
       alignItems="center"
     >
-      <Box width="100vw" height="100vh" overflow="hidden">
+      <Box
+        width="100vw"
+        height="100vh"
+        minHeight="100vh"
+        minwidth="100vw"
+        overflow="hidden"
+      >
         <Image
           src="/banner.png"
-          alt="Suit"
-          minHeight="100vh"
-          minWidth="100vh"
-          align="0 -400px"
+          alt="Model"
+          minHeight="100%"
+          minWidth="100%"
           objectFit="cover"
+          height="100%"
+          width="100%"
         />
       </Box>
       <Flex
@@ -40,7 +47,7 @@ const Banner = () => {
       >
         <Heading
           color={position ? 'black' : active ? 'white' : 'transparent'}
-          fontSize="10em"
+          fontSize={['2em', '6em', '7em', '11em']}
           letterSpacing=".5em"
           marginLeft=".5em"
           transition=".4s ease-in"

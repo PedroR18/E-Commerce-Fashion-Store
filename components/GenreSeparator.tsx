@@ -1,37 +1,54 @@
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react';
 import { useState } from 'react';
 
 const GenreSeparator = () => {
   const [active, setActive] = useState<'left' | 'right' | undefined>(undefined);
+  const [isLargerThan1700] = useMediaQuery('(min-width: 1700px)');
+  const [isLargerThan1900] = useMediaQuery('(min-width: 1900px)');
   return (
-    <Flex width="100vw" height="100vh" scrollSnapAlign="start">
+    <Flex
+      width="100vw"
+      height="100vh"
+      scrollSnapAlign="start"
+      direction={['column', 'column', 'column', 'row']}
+    >
       <Flex
-        width="50vw"
         justifyContent="center"
         alignItems="center"
         position="relative"
         cursor="pointer"
         onMouseOver={() => setActive('left')}
         onMouseLeave={() => setActive(undefined)}
+        width={['100vw', '100vw', '100vw', '50vw']}
+        height={['50vh', '50vh', '50vh', '100vh']}
       >
         <Box
           position="absolute"
           zIndex={-10}
-          width="50vw"
-          height="100vh"
           overflow="hidden"
+          width="100%"
+          height="100%"
+          minHeight={['50vh', '50vh', '50vh', '100vh']}
         >
           <Image
+            align={
+              isLargerThan1900
+                ? '0 -300px'
+                : isLargerThan1700
+                ? '0 -100px'
+                : ['0 0', '0 -150px', '0 -250px', '-100px 0', '0 0', '0 0']
+            }
             src="/home-female.png"
             alt="female"
-            align="0 -340px"
+            minHeight="100%"
+            objectFit="cover"
             transform={active === 'left' ? 'scale(1.1)' : 'none'}
             transition=".2s ease-in"
           />
         </Box>
 
         <Text
-          fontSize="7em"
+          fontSize={['4em', '4em', '4em', '7em']}
           color="blackAlpha.800"
           textDecoration={active === 'left' ? 'none' : 'underline'}
           textDecorationColor="blackAlpha.800"
@@ -47,25 +64,35 @@ const GenreSeparator = () => {
       </Flex>
 
       <Flex
-        width="50vw"
         justifyContent="center"
         alignItems="center"
         position="relative"
         cursor="pointer"
         onMouseOver={() => setActive('right')}
         onMouseLeave={() => setActive(undefined)}
+        width={['100vw', '100vw', '100vw', '50vw']}
+        height={['50vh', '50vh', '50vh', '100vh']}
       >
         <Box
           position="absolute"
           zIndex={-10}
-          width="50vw"
-          height="100vh"
           overflow="hidden"
+          width="100%"
+          height="100%"
+          minHeight={['50vh', '50vh', '50vh', '100vh']}
         >
           <Image
             src="/home-male.png"
             alt="male"
-            align="0 -400px"
+            align={
+              isLargerThan1900
+                ? '0 -350px'
+                : isLargerThan1700
+                ? '0 -200px'
+                : ['0 0', '0 -150px', '0 -350px', '0 0', '0 0', '0 -150px']
+            }
+            minHeight="100%"
+            objectFit="cover"
             transform={active === 'right' ? 'scale(1.1)' : 'none'}
             transition=".2s ease-in"
           />
@@ -74,7 +101,7 @@ const GenreSeparator = () => {
           color="blackAlpha.800"
           textDecoration={active === 'right' ? 'none' : 'underline'}
           textDecorationColor="blackAlpha.800"
-          fontSize="7em"
+          fontSize={['4em', '4em', '4em', '7em']}
           position="absolute"
           left={10}
           top={6}

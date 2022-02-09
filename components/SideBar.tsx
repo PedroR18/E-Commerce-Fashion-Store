@@ -46,12 +46,14 @@ const SideBar = () => {
   return (
     <Flex
       bgColor="blackAlpha.600"
-      width="100px"
+      width={['50px', '50px', '100px']}
       height="100vh"
       position="fixed"
       left={0}
       justifyContent="center"
       zIndex={100}
+      transition=".3s ease-in"
+      visibility={['hidden', 'hidden', 'visible']}
     >
       <Flex
         style={{

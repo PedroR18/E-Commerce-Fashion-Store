@@ -34,7 +34,7 @@ const Contact = () => {
         alignItems="center"
         gap={5}
       >
-        <Text color="white" fontSize="4em">
+        <Text color="white" fontSize="4em" textAlign="center">
           {`Don't miss anything`.toUpperCase()}
         </Text>
         <Flex justifyContent="center" alignItems="center" gap={10}>
