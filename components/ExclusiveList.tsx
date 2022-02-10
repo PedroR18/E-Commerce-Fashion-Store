@@ -1,12 +1,4 @@
-import {
-  Box,
-  Fade,
-  Grid,
-  GridItem,
-  Heading,
-  Image,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Fade, Flex, Image, Text } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
 import ExclusiveListGrid from './ExclusiveListGrid';
 
@@ -31,103 +23,113 @@ const ExclusiveList = () => {
   }, []);
 
   return (
-    <Grid
+    <Flex
       justifyContent="center"
       height="100vh"
       width="100vw"
       scrollSnapAlign="start"
-      gridTemplateColumns="100px 1fr auto 1fr"
-      gridTemplateRows="100%"
       alignItems="center"
-      direction="row"
+      direction="column"
       position="relative"
     >
-      <GridItem height="100%" width="100px" />
-      <GridItem
-        height="50%"
-        width="60%"
-        display="flex"
-        alignItems="start"
-        justifyContent="center"
-        flexDirection="column"
-        margin="0 auto"
-        gap={2}
+      <Flex
+        alignItems="center"
+        direction="column"
+        justifyContent="space-around"
+        height="100%"
+        width="100%"
+        gap={16}
       >
-        <Text fontSize="4em" lineHeight="1.2em">
-          GET THE NEW COLLECTION FIRST
-        </Text>
-        <Text fontSize="2em" color="blackAlpha.800">
-          Join a select group of 25 lucky members
-        </Text>
-        <Text
-          fontSize="1.5em"
-          cursor="pointer"
-          fontWeight="bold"
-          borderBottom="2px solid black"
-          transition=".4s ease-in"
-          _hover={{ transform: 'scale(1.1)' }}
+        <Flex
+          width="90%"
+          alignItems="center"
+          justifyContent="center"
+          direction="column"
+          gap={2}
         >
-          Join Waiting List
-        </Text>
-      </GridItem>
+          <Text
+            fontSize={['2.3em', '2.3em', '2.5em', '3.5em']}
+            lineHeight="1.2em"
+          >
+            GET THE NEW COLLECTION FIRST
+          </Text>
+          <Text
+            fontSize={['1.5em', '1.5em', '1.5em', '2em']}
+            color="blackAlpha.800"
+            textAlign="left"
+          >
+            Join a select group of 25 lucky members
+          </Text>
+          <Text
+            fontSize={['1.2em', '1.2em', '1.2em', '1.5em']}
+            cursor="pointer"
+            fontWeight="bold"
+            borderBottom="2px solid black"
+            transition=".4s ease-in"
+            _hover={{ transform: 'scale(1.1)' }}
+          >
+            Join Waiting List
+          </Text>
+        </Flex>
 
-      <GridItem height="750px" width="750px" position="relative">
-        <Box
-          position="absolute"
-          height="100%"
-          width="100%"
-          zIndex={10}
-          onMouseOver={(e) => {
-            setReveal(true);
-          }}
-          onMouseOut={() => setReveal(false)}
-          ref={ref}
-        />
-        <ExclusiveListGrid />
-        <Fade in={reveal}>
-          <Image
-            src="/ex-list-grid.png"
-            alt="Man with golden chain"
+        <Flex
+          height={['450px', '450px', '500px', '610px', '650px']}
+          width={['450px', '450px', '500px', '610px', '650px']}
+          position="relative"
+          mt={[16, 16, 16, 0]}
+          justifyContent="start"
+          alignItems="center"
+        >
+          <Box
             position="absolute"
-            top={0}
-            visibility={reveal ? 'visible' : 'hidden'}
-            willChange="transform"
-            clipPath={`circle(20% at ${maskPosition.x}px ${maskPosition.y}px)`}
-            maxHeight="750px"
-            minWidth="100%"
+            height="100%"
+            width="100%"
+            zIndex={100}
+            onMouseOver={(e) => {
+              setReveal(true);
+            }}
+            onMouseOut={() => setReveal(false)}
+            ref={ref}
           />
-        </Fade>
-      </GridItem>
-      <Image
-        src="/exclusive-texture.png"
-        alt="Rose"
-        height="800px"
-        width="500px"
-        objectFit="cover"
-        zIndex={-5}
-        position="absolute"
-        top={0}
-        right={60}
-      />
-
-      <GridItem height="750px" width="100%" position="relative">
-        <Heading
-          fontSize="9em"
-          letterSpacing=".5em"
+          <ExclusiveListGrid />
+          <Fade in={reveal}>
+            <Image
+              src="/ex-list-grid.png"
+              alt="Man with golden chain"
+              position="absolute"
+              top={0}
+              bottom={0}
+              left={0}
+              right={0}
+              visibility={reveal ? 'visible' : 'hidden'}
+              willChange="transform"
+              clipPath={`circle(20% at ${maskPosition.x}px ${maskPosition.y}px)`}
+              maxHeight="100%"
+              minWidth="100%"
+            />
+          </Fade>
+        </Flex>
+        <Image
+          src="/exclusive-texture.png"
+          alt="Rose"
+          height={['800px', '800px', '800px', '800px', '1000px']}
+          width={['500px', '500px', '500px', '500px', '700px']}
+          objectFit="cover"
+          zIndex={-5}
           position="absolute"
-          bottom={0}
-          left={150}
-          transition=".4s ease-in"
-          style={{
-            color: 'black',
-          }}
-          zIndex={100}
-          _hover={{ transform: 'scale(1.25)' }}
-        >
-          FLEX
-        </Heading>
-      </GridItem>
-    </Grid>
+          transform={[
+            'rotate(90deg)',
+            'rotate(90deg)',
+            'rotate(90deg)',
+            'rotate(90deg)',
+            'rotate(90deg)',
+            'none',
+          ]}
+          right={[10, 10, 10, 10, 10, -100]}
+          top={[-16, -16, -16, -40, -72, 0]}
+        />
+      </Flex>
+    </Flex>
   );
 };
 export default ExclusiveList;

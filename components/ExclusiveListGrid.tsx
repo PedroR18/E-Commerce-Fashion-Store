@@ -8,7 +8,7 @@ const ExclusiveListGrid = () => {
       templateRows="repeat(5, 1fr)"
       templateColumns="repeat(5, 1fr)"
       gap={4}
-      zIndex={10}
+      zIndex={0}
     >
       <GridItem
         bgImage="url(/ex-list-grid.png)"

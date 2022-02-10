@@ -34,14 +34,14 @@ const Contact = () => {
         alignItems="center"
         gap={5}
       >
-        <Text color="white" fontSize="4em" textAlign="center">
+        <Text color="white" fontSize={['3em', '3em', '4em']} textAlign="center">
           {`Don't miss anything`.toUpperCase()}
         </Text>
         <Flex justifyContent="center" alignItems="center" gap={10}>
-          <AiFillFacebook color="white" size={70} cursor="pointer" />
-          <AiFillTwitterSquare color="white" size={70} cursor="pointer" />
-          <AiFillInstagram color="white" size={70} cursor="pointer" />
-          <AiFillLinkedin color="white" size={70} cursor="pointer" />
+          <AiFillFacebook color="white" size={60} cursor="pointer" />
+          <AiFillTwitterSquare color="white" size={60} cursor="pointer" />
+          <AiFillInstagram color="white" size={60} cursor="pointer" />
+          <AiFillLinkedin color="white" size={60} cursor="pointer" />
         </Flex>
       </Flex>
       <Heading
