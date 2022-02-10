@@ -1,4 +1,4 @@
-import { Box, Fade, Flex, Image, Text } from '@chakra-ui/react';
+import { Box, Fade, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
 import ExclusiveListGrid from './ExclusiveListGrid';
 
@@ -6,6 +6,7 @@ const ExclusiveList = () => {
   const [reveal, setReveal] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ x: 0, y: 0 });
   const ref = useRef<HTMLDivElement>(null);
+  const [isLargerThan1900] = useMediaQuery('(min-width: 1900px)');
 
   useEffect(() => {
     const setCoordinates = (mouse: MouseEvent) => {
@@ -115,7 +116,7 @@ const ExclusiveList = () => {
           height={['800px', '800px', '800px', '800px', '1000px']}
           width={['500px', '500px', '500px', '500px', '700px']}
           objectFit="cover"
-          zIndex={-5}
+          zIndex={-100}
           position="absolute"
           transform={[
             'rotate(90deg)',
@@ -125,8 +126,8 @@ const ExclusiveList = () => {
             'rotate(90deg)',
             'none',
           ]}
-          right={[10, 10, 10, 10, 10, -100]}
-          top={[-16, -16, -16, -40, -72, 0]}
+          right={isLargerThan1900 ? '100' : [10, 10, 10, 10, 10, -36]}
+          top={[-16, -16, -16, -40, -64, 0]}
         />
       </Flex>
     </Flex>
