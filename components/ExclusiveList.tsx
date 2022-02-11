@@ -74,8 +74,8 @@ const ExclusiveList = () => {
         </Flex>
 
         <Flex
-          height={['450px', '450px', '500px', '610px', '650px']}
-          width={['450px', '450px', '500px', '610px', '650px']}
+          height={['400px', '450px', '500px', '610px', '650px']}
+          width={['400px', '450px', '500px', '610px', '650px']}
           position="relative"
           mt={[16, 16, 16, 0]}
           justifyContent="start"
@@ -113,8 +113,8 @@ const ExclusiveList = () => {
         <Image
           src="/exclusive-texture.png"
           alt="Rose"
-          height={['800px', '800px', '800px', '800px', '1000px']}
-          width={['500px', '500px', '500px', '500px', '700px']}
+          height={['500px', '800px', '800px', '800px', '1000px']}
+          width={['300px', '500px', '500px', '500px', '700px']}
           objectFit="cover"
           zIndex={-100}
           position="absolute"
@@ -126,8 +126,8 @@ const ExclusiveList = () => {
             'rotate(90deg)',
             'none',
           ]}
-          right={isLargerThan1900 ? '100' : [10, 10, 10, 10, 10, -36]}
-          top={[-16, -16, -16, -40, -64, 0]}
+          right={isLargerThan1900 ? '100' : [28, 10, 10, 10, 10, -36]}
+          top={[14, -16, -16, -40, -64, 0]}
         />
       </Flex>
     </Flex>

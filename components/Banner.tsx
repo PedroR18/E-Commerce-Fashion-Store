@@ -10,7 +10,7 @@ const Banner = () => {
       if (window.scrollY === 0) {
         setPosition(0);
       } else {
-        setPosition(675);
+        setPosition(670);
       }
     });
   }, []);
@@ -47,7 +47,11 @@ const Banner = () => {
       >
         <Heading
           color={position ? 'black' : active ? 'white' : 'transparent'}
-          fontSize={['2em', '6em', '7em', '11em']}
+          fontSize={
+            position
+              ? ['4.5em', '5em', '6em', '6.5em', '6.5em', '7em']
+              : ['4em', '6em', '7em', '11em']
+          }
           letterSpacing=".5em"
           marginLeft=".5em"
           transition=".4s ease-in"

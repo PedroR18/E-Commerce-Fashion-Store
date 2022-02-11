@@ -48,7 +48,7 @@ const GenreSeparator = () => {
         </Box>
 
         <Text
-          fontSize={['4em', '4em', '4em', '7em']}
+          fontSize={['3em', '4em', '4em', '7em']}
           color="blackAlpha.800"
           textDecoration={active === 'left' ? 'none' : 'underline'}
           textDecorationColor="blackAlpha.800"
@@ -101,7 +101,7 @@ const GenreSeparator = () => {
           color="blackAlpha.800"
           textDecoration={active === 'right' ? 'none' : 'underline'}
           textDecorationColor="blackAlpha.800"
-          fontSize={['4em', '4em', '4em', '7em']}
+          fontSize={['3em', '4em', '4em', '7em']}
           position="absolute"
           left={10}
           top={6}
