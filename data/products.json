@@ -63,262 +63,440 @@
   },
   "5": {
     "id": "5",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Off-White",
+    "name": "Degradé Arrows cotton T-shirt",
+    "price": "370",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/95/90/65/16959065_36490628_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/95/90/65/16959065_36492188_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/95/90/65/16959065_36492186_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/95/90/65/16959065_36492187_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/95/90/65/16959065_36490629_1000.jpg"
+    ],
+    "details": "Punctuated to the rear with Off-White's instantly recognisable Arrows logo, updated in a sunset-inspired degradé effect, this black cotton T-shirt is cut to simple crew-neck silhouette. It is also detailed with the 'Hands Off' logo printed at the chest for a signature look from every angle.",
+    "tag": "t-shirt",
+    "genre": "men"
   },
   "6": {
     "id": "6",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Paco Rabanne",
+    "name": "short-sleeve cropped polo top",
+    "price": "520",
+    "colors": ["black", "orange"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/21/83/75/17218375_37769046_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/21/83/75/17218375_37769047_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/21/83/75/17218375_37769048_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/21/83/75/17218375_37769049_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/21/83/75/17218375_37769050_1000.jpg"
+    ],
+    "details": "Orange short-sleeve cropped polo top from PACO RABANNE featuring knitted construction, cropped, horizontal stripe pattern, polo collar, front button placket, short sleeves and straight hem.",
+    "tag": "t-shirt",
+    "genre": "women"
   },
   "7": {
     "id": "7",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Alexander Wang",
+    "name": "Bite logo-print denim shorts",
+    "price": "245",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/02/01/34/17020134_37464842_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/02/01/34/17020134_37464848_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/02/01/34/17020134_37464849_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/02/01/34/17020134_37466023_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/02/01/34/17020134_37464850_1000.jpg"
+    ],
+    "details": "Alexander Wang's Bite denim shorts are elevated thanks to the all-over logo print that adorns them. Crafted from washed denim for a worn-out effect and featuring a high waist, this pair gets a signature finish.",
+    "tag": "shorts",
+    "genre": "women"
   },
   "8": {
     "id": "8",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Maison Margiela",
+    "name": "washed bootcut jeans",
+    "price": "590",
+    "colors": ["blue"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/13/12/19/23/13121923_14206663_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/13/12/19/23/13121923_14206664_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/13/12/19/23/13121923_14206665_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/13/12/19/23/13121923_14206666_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/13/12/19/23/13121923_14206667_1000.jpg"
+    ],
+    "details": "Seen through a dégradé lens, Maison Margiela’s AW18 collection was inspired by the concept of dressing in reverse. The collection's theme is visible in these classic denim cotton bootcut jeans.",
+    "tag": "jeans",
+    "genre": "women"
   },
   "9": {
     "id": "9",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Balmain",
+    "name": "logo-embroidered cropped T-shirt",
+    "price": "250",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/15/70/02/58/15700258_28629331_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/70/02/58/15700258_28629334_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/70/02/58/15700258_28629332_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/70/02/58/15700258_28629339_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/70/02/58/15700258_28629341_1000.jpg"
+    ],
+    "details": "Keep it casual in this cropped cotton T-shirt from Balmain. Designed with an embroidered logo at the chest, this short-sleeved tee is just the thing to elevate your laid-back look.",
+    "tag": "t-shirt",
+    "genre": "women"
   },
   "10": {
     "id": "10",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Balmain",
+    "name": "logo sweatshirt",
+    "price": "495",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/15/70/02/81/15700281_37330776_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/70/02/81/15700281_37330777_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/70/02/81/15700281_37330779_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/70/02/81/15700281_37330778_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/70/02/81/15700281_37330780_1000.jpg"
+    ],
+    "details": "Whoever said you have to choose between comfort and style has clearly never seen this Balmain sweatshirt. Decorated with a contrasting logo to the chest, it ensures that everyone you pass knows exactly where your loyalties lie.",
+    "tag": "sweater",
+    "genre": "women"
   },
   "11": {
     "id": "11",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "AMI Paris",
+    "name": "Ami de Coeur T-shirt",
+    "price": "135",
+    "colors": ["blue"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/47/18/97/16471897_32361889_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/47/18/97/16471897_32361890_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/47/18/97/16471897_32363741_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/47/18/97/16471897_32363743_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/47/18/97/16471897_32363742_1000.jpg"
+    ],
+    "details": "You can't go wrong with AMI Paris. Crafted from organic cotton, this short-sleeve T-shirt is embellished with the brand's signature Ami de Coeur monogram motif at the chest. Do good and look good.",
+    "tag": "t-shirt",
+    "genre": "women"
   },
   "12": {
     "id": "12",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Off-White",
+    "name": "logo-print ribbed dress",
+    "price": "395",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/04/77/21/16047721_30638406_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/04/77/21/16047721_30637882_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/04/77/21/16047721_30636965_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/04/77/21/16047721_30638405_1000.jpg"
+    ],
+    "details": "Too many LBDs? No such thing. And this ribbed black mini dress by Off-White is ready and waiting patiently to be the newest addition to your ever-expanding collection. Go on, let her in.",
+    "tag": "dress",
+    "genre": "women"
   },
   "13": {
     "id": "13",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "AMI Paris",
+    "name": "logo-embroidered drawstring hoodie",
+    "price": "280",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/15/68/85/29/15688529_32369684_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/68/85/29/15688529_32369677_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/68/85/29/15688529_32369687_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/68/85/29/15688529_32369686_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/68/85/29/15688529_32369685_1000.jpg"
+    ],
+    "details": "Here to prove that comfort and couture can go hand-in-hand, this hoodie from AMI Paris comes in peace. With a red embroidered logo at the chest amid a traditional hoodie silhouette, it's time to get cosy. Off you go.",
+    "tag": "hoodie",
+    "genre": "men"
   },
   "14": {
     "id": "14",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Alexander Wang",
+    "name": "logo print acid wash T-shirt",
+    "price": "209",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/38/89/76/17388976_36355831_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/38/89/76/17388976_36356831_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/38/89/76/17388976_36356833_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/38/89/76/17388976_36355832_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/38/89/76/17388976_36356834_1000.jpg"
+    ],
+    "details": "classic short-sleeve tee with contrast puff paint logo print at chest in green overdyed acid washed black high twist jersey",
+    "tag": "t-shirt",
+    "genre": "men"
   },
   "15": {
     "id": "15",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Maison Margiela",
+    "name": "patch-detail long-sleeve hoodie",
+    "price": "720",
+    "colors": ["blue"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/69/32/01/16693201_34941601_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/69/32/01/16693201_34942339_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/69/32/01/16693201_34942335_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/69/32/01/16693201_34942336_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/69/32/01/16693201_34940878_1000.jpg"
+    ],
+    "details": "Known for a minimalist yet innovative design style, it is reflected in this Maison Margiela hoodie design, with an unbranded patch detail at the front referencing the brands theme of anonymity and simultaneously making this casual wear piece instantly recognisable.",
+    "tag": "hoodie",
+    "genre": "men"
   },
   "16": {
     "id": "16",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Maison Margiela",
+    "name": "elbow-patch polo jumper",
+    "price": "980",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/78/27/58/16782758_35742143_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/78/27/58/16782758_35740910_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/78/27/58/16782758_35742145_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/78/27/58/16782758_35742144_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/78/27/58/16782758_35742149_1000.jpg"
+    ],
+    "details": "Knitted from anthracite-grey wool, Maison Margiela is cut to a polo-style silhouette - note the collar and button placket. As a testament to the brand's unconventional nature, it is decorated with elbow patches and the signature four-stitch logo.",
+    "tag": "sweater",
+    "genre": "women"
   },
   "17": {
     "id": "17",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Balmain",
+    "name": "PB-monogram print sweatshirt",
+    "price": "1,095",
+    "colors": ["black", "white", "orange"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/23/87/19/17238719_36596683_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/23/87/19/17238719_36597517_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/23/87/19/17238719_36595971_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/23/87/19/17238719_36596662_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/23/87/19/17238719_36597525_1000.jpg"
+    ],
+    "details": "Black cotton monogram-panel sweatshirt from Balmain featuring ribbed detailing, monogram print, round neck, long sleeves, two front welt pockets and straight hem.",
+    "tag": "sweater",
+    "genre": "men"
   },
   "18": {
     "id": "18",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "A-COLD-WALL*",
+    "name": "logo-embroidered cotton jumper",
+    "price": "250",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/87/89/44/16878944_36113382_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/87/89/44/16878944_36113378_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/87/89/44/16878944_36113380_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/87/89/44/16878944_36113381_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/87/89/44/16878944_36113379_1000.jpg"
+    ],
+    "details": "With a discreet logo embroidered at the front, A-COLD-WALL*'s sweatshirt is crafted from cotton and cut to a simple crew-neck silhouette.",
+    "tag": "sweater",
+    "genre": "men"
   },
   "19": {
     "id": "19",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "A-COLD-WALL*",
+    "name": "graphic-print short-sleeved T-shirt",
+    "price": "342",
+    "colors": ["black", "orange"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/92/10/12/17921012_37870053_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/92/10/12/17921012_37870054_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/92/10/12/17921012_37869040_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/92/10/12/17921012_37870052_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/92/10/12/17921012_37868583_1000.jpg"
+    ],
+    "details": "Detailed with a graphic print, this black T-shirt from A-COLD-WALL* features short sleeves and offers a relaxed, slightly oversized fit.",
+    "tag": "t-shirt",
+    "genre": "men"
   },
   "20": {
     "id": "20",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Maison Margiela",
+    "name": "distressed straight-leg jeans",
+    "price": "620",
+    "colors": ["blue"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/15/01/17/78/15011778_36163372_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/01/17/78/15011778_36163373_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/01/17/78/15011778_36161298_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/01/17/78/15011778_36163374_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/15/01/17/78/15011778_36163375_1000.jpg"
+    ],
+    "details": "Maison Margiela's may look relatively tame but they're anything but basic. A little baggy, they have a straight-leg shape and are slashed at the sides to reveal a little skin. Oo er.",
+    "tag": "jeans",
+    "genre": "women"
   },
   "21": {
     "id": "21",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Off-White",
+    "name": "Hands Off-embroidered jacket",
+    "price": "1,140",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/77/24/03/17772403_37471049_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/77/24/03/17772403_37470399_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/77/24/03/17772403_37471050_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/77/24/03/17772403_37470400_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/77/24/03/17772403_37471051_1000.jpg"
+    ],
+    "details": "For SS22, Off-White gives its clothing line a signature touch with their iconic Hands Off motif. Crafted from a wool blend, this jacket is cut to a straight hem and detailed with flap pockets.",
+    "tag": "jacket",
+    "genre": "women"
   },
   "22": {
     "id": "22",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Off-White",
+    "name": "logo-tape midi dress",
+    "price": "710",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/77/58/03/17775803_37585790_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/77/58/03/17775803_37588740_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/77/58/03/17775803_37588741_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/77/58/03/17775803_37585791_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/77/58/03/17775803_37585792_1000.jpg"
+    ],
+    "details": "Cutting-edge brand Off-White gives the classic black dress subtle yet impactful tweaks to add a signature irreverent touch to a wardrobe staple. The fitted silhouette is accented with logo-tape detailing that decorates the side seams.",
+    "tag": "dress",
+    "genre": "women"
   },
   "23": {
     "id": "23",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Paco Rabanne",
+    "name": "drawstring cotton hoodie",
+    "price": "270",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/64/50/15/16645015_34007288_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/64/50/15/16645015_34005822_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/64/50/15/16645015_34007290_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/64/50/15/16645015_34007291_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/64/50/15/16645015_34005823_1000.jpg"
+    ],
+    "details": "Paco Rabanne's hoodie is a sleek option for casual dressing. Made from black cotton jersey, this iteration is punctuated with the brand's signature at the shoulder.",
+    "tag": "hoodie",
+    "genre": "women"
   },
   "24": {
     "id": "24",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Paco Rabanne",
+    "name": "metallic-finish zip-up track jacket",
+    "price": "410",
+    "colors": ["silver"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/64/45/06/16644506_35111082_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/64/45/06/16644506_35111084_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/64/45/06/16644506_35111080_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/64/45/06/16644506_35111098_1000.jpg"
+    ],
+    "details": "Paco Rabanne brings its glamorous appeal into sportswear with this silver-tone track jacket. Crafted from a metallic-finish fabric, this piece has contrasting sporty-inspired features: note the logo tape zip puller and the contrasting black trims.",
+    "tag": "jacket",
+    "genre": "men"
   },
   "25": {
     "id": "25",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Ksubi",
+    "name": "distressed skinny jeans",
+    "price": "231",
+    "colors": ["blue"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/14/66/97/37/14669737_23315165_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/14/66/97/37/14669737_23315167_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/14/66/97/37/14669737_23315169_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/14/66/97/37/14669737_23315168_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/14/66/97/37/14669737_23315171_1000.jpg"
+    ],
+    "details": "Blue cotton distressed skinny jeans from Ksubi featuring a mid rise, a waistband with belt loops, a five pocket design, whiskering at the thigh and a stonewashed effect.",
+    "tag": "jeans",
+    "genre": "women"
   },
   "26": {
     "id": "26",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Ksubi",
+    "name": "short-sleeved cropped T-shirt",
+    "price": "90",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/74/92/32/16749232_37353652_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/74/92/32/16749232_37353651_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/74/92/32/16749232_37353650_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/74/92/32/16749232_37353653_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/74/92/32/16749232_37353654_1000.jpg"
+    ],
+    "details": "A minimal design, this short-sleeved T-shirt is defined by its black colourway and cropped length.",
+    "tag": "t-shirt",
+    "genre": "women"
   },
   "27": {
     "id": "27",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Ksubi",
+    "name": "Oh.G Skyhigh denim jacket",
+    "price": "361",
+    "colors": ["blue"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/54/38/54/17543854_37940402_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/54/38/54/17543854_37940405_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/54/38/54/17543854_37940403_1000.jpg"
+    ],
+    "details": "Australian label Ksubi premise is based on denim styles with distressed finishes and bold branded details. A prime example of that approach, this Oh.G Skyhigh denim jacket boast a stonewashed effect and signature embroidered details to the rear.",
+    "tag": "jacket",
+    "genre": "men"
   },
   "28": {
     "id": "28",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Alexander Wang",
+    "name": "Cathedral Rock crew-neck T-shirt",
+    "price": "238",
+    "colors": ["blue", "white"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/49/73/10/16497310_32290099_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/49/73/10/16497310_32134863_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/49/73/10/16497310_32134868_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/49/73/10/16497310_32134867_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/49/73/10/16497310_32134869_1000.jpg"
+    ],
+    "details": "Blue cotton Cathedral Rock crew-neck T-shirt from ALEXANDER WANG featuring abstract pattern print, logo print to the front, crew neck, short sleeves and straight hem.",
+    "tag": "t-shirt",
+    "genre": "men"
   },
   "29": {
     "id": "29",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Balmain",
+    "name": "logo-appliqué sweatshirt",
+    "price": "750",
+    "colors": ["grey"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/16/30/73/96/16307396_32708289_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/30/73/96/16307396_32708293_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/30/73/96/16307396_32708287_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/30/73/96/16307396_32706956_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/16/30/73/96/16307396_32708292_1000.jpg"
+    ],
+    "details": "You can't go wrong with a logo sweatshirt. A low-key day staple, it's a winner for a reason - especially if the logo looks as distinctive as the one on Balmain's crew-neck style. Sorted.",
+    "tag": "sweater",
+    "genre": "men"
   },
   "30": {
     "id": "30",
-    "brand": "",
-    "name": "",
-    "price": "",
-    "colors": [],
-    "photos": [],
-    "details": "",
-    "tags": []
+    "brand": "Balmain",
+    "name": "contrast-trim sleeveless dress",
+    "price": "2,095",
+    "colors": ["black"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/62/18/59/17621859_37226692_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/62/18/59/17621859_37226697_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/62/18/59/17621859_37224885_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/62/18/59/17621859_37224887_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/62/18/59/17621859_37225375_1000.jpg"
+    ],
+    "details": "An LBD with a difference, this short style from Balmain is trimmed with a contrasting gold tone to highlight the silhouette of the dress. With two different types of straps, the design turns around to showcase the brand's signature exposed rear zip fastening.",
+    "tag": "dress",
+    "genre": "women"
   }
 }
