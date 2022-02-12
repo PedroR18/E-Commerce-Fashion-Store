@@ -1,0 +1,324 @@
+{
+  "1": {
+    "id": "1",
+    "brand": "AMI Paris",
+    "name": "Ami De Coeur crew-neck jumper",
+    "price": "509",
+    "colors": ["black", "red"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/97/43/65/17974365_38064823_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/97/43/65/17974365_38065660_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/97/43/65/17974365_38064824_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/97/43/65/17974365_38064825_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/97/43/65/17974365_38065661_1000.jpg"
+    ],
+    "details": "The Ami de Cœur monogram, translated literally as ‘AMI of Hearts’, has a personal meaning to Alexandre Mattiussi - the designer of AMI Paris- it captures the relaxed, friendly nature that is at the heart of the approach of the brand. The symbol is presented on the chest of this black crew-neck jumper for an instantly recognisable look.",
+    "tag": "sweater",
+    "genre": "men"
+  },
+  "2": {
+    "id": "2",
+    "brand": "Off-White",
+    "name": "logo-patches varsity jacket",
+    "price": "3,425",
+    "colors": ["black", "white", "orange"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/59/50/48/17595048_37973882_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/59/50/48/17595048_37972627_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/59/50/48/17595048_37973883_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/59/50/48/17595048_37972628_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/59/50/48/17595048_37971770_1000.jpg"
+    ],
+    "details": "A collegiate-inspired design, this varsity jacket is adorned with multiple Off-White's logo patches to the front, sleeves and back in a contrasting orange hue. It is crafted from wool and finished with side slit pockets.",
+    "tag": "jacket",
+    "genre": "men"
+  },
+  "3": {
+    "id": "3",
+    "brand": "A-COLD-WALL*",
+    "name": "tie-dye wool jumper",
+    "price": "752",
+    "colors": ["grey", "beige"],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/70/40/89/17704089_37880666_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/70/40/89/17704089_37881860_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/70/40/89/17704089_37882013_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/70/40/89/17704089_37880667_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/70/40/89/17704089_37880668_1000.jpg"
+    ],
+    "details": "Spun from wool, this jumper from A-COLD-WALL* has been cut for a loose fit. It showcases a digital print that nods to the tie-dyeing techniques employed by the brand.",
+    "tag": "sweater",
+    "genre": "men"
+  },
+  "4": {
+    "id": "4",
+    "brand": "Ksubi",
+    "name": "King Letterman bomber jacket",
+    "price": "1,127",
+    "colors": ["black", "beige"],
+    "photos": [],
+    "details": "Initially dedicated exclusively to denim, Ksubi has broadened their design scope to include pieces that capture their casual aesthetic. A prime example, this bomber jacket has been accented with a bold logo print to the rear.",
+    "tag": "jacket",
+    "genre": "men"
+  },
+  "5": {
+    "id": "5",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "6": {
+    "id": "6",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "7": {
+    "id": "7",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "8": {
+    "id": "8",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "9": {
+    "id": "9",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "10": {
+    "id": "10",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "11": {
+    "id": "11",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "12": {
+    "id": "12",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "13": {
+    "id": "13",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "14": {
+    "id": "14",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "15": {
+    "id": "15",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "16": {
+    "id": "16",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "17": {
+    "id": "17",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "18": {
+    "id": "18",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "19": {
+    "id": "19",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "20": {
+    "id": "20",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "21": {
+    "id": "21",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "22": {
+    "id": "22",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "23": {
+    "id": "23",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "24": {
+    "id": "24",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "25": {
+    "id": "25",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "26": {
+    "id": "26",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "27": {
+    "id": "27",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "28": {
+    "id": "28",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "29": {
+    "id": "29",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  },
+  "30": {
+    "id": "30",
+    "brand": "",
+    "name": "",
+    "price": "",
+    "colors": [],
+    "photos": [],
+    "details": "",
+    "tags": []
+  }
+}

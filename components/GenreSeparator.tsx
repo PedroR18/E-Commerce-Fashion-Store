@@ -1,7 +1,9 @@
 import { Box, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 const GenreSeparator = () => {
+  const router = useRouter();
   const [active, setActive] = useState<'left' | 'right' | undefined>(undefined);
   const [isLargerThan1700] = useMediaQuery('(min-width: 1700px)');
   const [isLargerThan1900] = useMediaQuery('(min-width: 1900px)');
@@ -19,6 +21,9 @@ const GenreSeparator = () => {
         cursor="pointer"
         onMouseOver={() => setActive('left')}
         onMouseLeave={() => setActive(undefined)}
+        onClick={() =>
+          router.push({ pathname: '/store', query: { for: 'women' } })
+        }
         width={['100vw', '100vw', '100vw', '50vw']}
         height={['50vh', '50vh', '50vh', '100vh']}
       >
@@ -69,6 +74,9 @@ const GenreSeparator = () => {
         position="relative"
         cursor="pointer"
         onMouseOver={() => setActive('right')}
+        onClick={() =>
+          router.push({ pathname: '/store', query: { for: 'men' } })
+        }
         onMouseLeave={() => setActive(undefined)}
         width={['100vw', '100vw', '100vw', '50vw']}
         height={['50vh', '50vh', '50vh', '100vh']}
