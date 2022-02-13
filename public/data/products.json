@@ -12,7 +12,7 @@
       "https://cdn-images.farfetch-contents.com/17/97/43/65/17974365_38064825_1000.jpg",
       "https://cdn-images.farfetch-contents.com/17/97/43/65/17974365_38065661_1000.jpg"
     ],
-    "details": "The Ami de Cœur monogram, translated literally as ‘AMI of Hearts’, has a personal meaning to Alexandre Mattiussi - the designer of AMI Paris- it captures the relaxed, friendly nature that is at the heart of the approach of the brand. The symbol is presented on the chest of this black crew-neck jumper for an instantly recognisable look.",
+    "details": "The Ami de Cœur monogram, translated literally as AMI of Hearts, has a personal meaning to Alexandre Mattiussi - the designer of AMI Paris- it captures the relaxed, friendly nature that is at the heart of the approach of the brand. The symbol is presented on the chest of this black crew-neck jumper for an instantly recognisable look.",
     "tag": "sweater",
     "genre": "men"
   },
@@ -56,7 +56,11 @@
     "name": "King Letterman bomber jacket",
     "price": "1,127",
     "colors": ["black", "beige"],
-    "photos": [],
+    "photos": [
+      "https://cdn-images.farfetch-contents.com/17/54/38/53/17543853_37971863_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/54/38/53/17543853_37972678_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/17/54/38/53/17543853_37971865_1000.jpg"
+    ],
     "details": "Initially dedicated exclusively to denim, Ksubi has broadened their design scope to include pieces that capture their casual aesthetic. A prime example, this bomber jacket has been accented with a bold logo print to the rear.",
     "tag": "jacket",
     "genre": "men"
