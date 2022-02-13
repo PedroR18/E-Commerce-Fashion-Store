@@ -1,3 +1,4 @@
+import { Box, Flex, Grid } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -15,13 +16,16 @@ const Store: NextPage = () => {
       .then((data) => setProducts(Object.values(data)));
   }, []);
   return (
-    <>
+    <Flex>
       <StoreSideBar />
-      {products &&
-        products.map((product) => {
-          return <ProductCard key={product.id} product={product} />;
-        })}
-    </>
+      <Box width="300px" />
+      <Grid templateColumns="repeat(5, 400px)" gap={5} m={5}>
+        {products &&
+          products.map((product) => {
+            return <ProductCard key={product.id} product={product} />;
+          })}
+      </Grid>
+    </Flex>
   );
 };
 export default Store;

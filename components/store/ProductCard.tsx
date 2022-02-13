@@ -1,4 +1,5 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { Product } from '../../utilities/interface';
 
 interface Props {
@@ -6,10 +7,24 @@ interface Props {
 }
 
 const ProductCard = ({ product }: Props) => {
+  const router = useRouter();
   return (
-    <Flex border="1px solid black">
+    <Flex
+      gap={3}
+      p={3}
+      direction="column"
+      cursor="pointer"
+      onClick={() => router.push(`/product/${product.id}`)}
+    >
+      <Image
+        src={product.photos[0]}
+        alt={product.name}
+        height="400px"
+        objectFit="contain"
+      />
+      <Text fontSize="2em">{product.brand}</Text>
       <Text>{product.name}</Text>
-      <Image src={product.photos[0]} alt={product.name} height="100px" />
+      <Text>${product.price}</Text>
     </Flex>
   );
 };
