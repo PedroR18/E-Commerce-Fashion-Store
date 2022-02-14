@@ -1,7 +1,10 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
 import type { AppProps } from 'next/app';
+import { createContext, useEffect, useReducer } from 'react';
 import theme from '../theme/theme';
+import { ContextType } from '../utilities/interface';
+import { cartReducer } from '../utilities/reducers';
 
 const Fonts = () => (
   <Global
@@ -17,12 +20,27 @@ const Fonts = () => (
      `}
   />
 );
+export const cartContext = createContext<ContextType>(undefined!);
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const data = localStorage.getItem('cart');
+    if (data) {
+      cartDispatch({ type: 'setCart', payload: JSON.parse(data) });
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartState));
+  });
+
+  const [cartState, cartDispatch] = useReducer(cartReducer, undefined!);
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
-      <Component {...pageProps} />
+      <cartContext.Provider value={{ cart: cartState, setCart: cartDispatch }}>
+        <Component {...pageProps} />
+      </cartContext.Provider>
     </ChakraProvider>
   );
 }

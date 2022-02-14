@@ -18,7 +18,7 @@ const Store: NextPage = () => {
   return (
     <Flex>
       <StoreSideBar />
-      <Box width="300px" />
+      <Box height="100vh" width="300px" />
       <Grid templateColumns="repeat(5, 400px)" gap={5} m={5}>
         {products &&
           products.map((product) => {
