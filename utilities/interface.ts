@@ -2,8 +2,8 @@ interface Product {
   id: string;
   brand: string;
   name: string;
-  price: string;
-  color: string[];
+  price: number;
+  colors: string[];
   photos: string[];
   details: string;
   tag: string;

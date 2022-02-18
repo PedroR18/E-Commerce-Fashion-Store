@@ -25,8 +25,8 @@ export const cartContext = createContext<ContextType>(undefined!);
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const data = localStorage.getItem('cart');
-    if (data) {
-      cartDispatch({ type: 'setCart', payload: JSON.parse(data) });
+    if (data !== undefined) {
+      cartDispatch({ type: 'setCart', payload: JSON.parse(data!) });
     }
   }, []);
 

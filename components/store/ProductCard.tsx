@@ -1,5 +1,6 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { Product } from '../../utilities/interface';
 
 interface Props {
@@ -8,6 +9,8 @@ interface Props {
 
 const ProductCard = ({ product }: Props) => {
   const router = useRouter();
+  const [pic, setPic] = useState(product.photos[0]);
+
   return (
     <Flex
       gap={3}
@@ -17,10 +20,12 @@ const ProductCard = ({ product }: Props) => {
       onClick={() => router.push(`/product/${product.id}`)}
     >
       <Image
-        src={product.photos[0]}
+        src={pic}
         alt={product.name}
         height="400px"
         objectFit="contain"
+        onMouseOver={() => setPic(product.photos[1])}
+        onMouseLeave={() => setPic(product.photos[0])}
       />
       <Text fontSize="2em">{product.brand}</Text>
       <Text>{product.name}</Text>

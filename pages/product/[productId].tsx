@@ -16,11 +16,13 @@ const ProductPage: NextPage = () => {
   const { productId } = router.query;
   const { setCart } = useContext(cartContext);
   const [currentProduct, setCurrentProduct] = useState<Product>();
-  const [highlight, setHighlight] = useState('');
+  const [highlight, setHighlight] = useState(0);
+  const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
     fetch('/data/products.json')
       .then((res) => res.json())
       .then((data) => {
+        setProducts(Object.values(data));
         const product: any = Object.values(data).filter(
           (el: any) => el.id === productId
         );
@@ -29,7 +31,7 @@ const ProductPage: NextPage = () => {
   }, [productId]);
   return (
     <Flex>
-      <StoreSideBar />
+      <StoreSideBar products={products} />
       <Box height="100vh" width="300px" />
       <Flex justifyContent="space-around" alignItems="center" width="100%">
         {currentProduct && (
@@ -51,6 +53,7 @@ const ProductPage: NextPage = () => {
               <p>{currentProduct.brand}</p>
               <p>{currentProduct.name}</p>
               <p>$ {currentProduct.price}</p>
+              <p>{currentProduct.details}</p>
               <Select placeholder="Select size">
                 <option value="s">S</option>
                 <option value="m">M</option>
@@ -78,6 +81,7 @@ const ProductPage: NextPage = () => {
           isOpen={isOpen}
           onClose={onClose}
           photos={currentProduct!.photos}
+          highlight={highlight}
         />
       )}
     </Flex>

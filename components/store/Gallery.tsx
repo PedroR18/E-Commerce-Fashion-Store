@@ -3,15 +3,15 @@ import { Flex, Grid, Image } from '@chakra-ui/react';
 interface Props {
   photos: string[];
   onOpen: () => void;
-  highlight: string;
-  setHighlight: React.Dispatch<React.SetStateAction<string>>;
+  highlight: number;
+  setHighlight: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Gallery = ({ photos, onOpen, highlight, setHighlight }: Props) => {
   return (
     <Flex direction="column" gap={5}>
       <Image
-        src={highlight || photos[0]}
+        src={photos[highlight] || photos[0]}
         alt="1"
         height="900px"
         objectFit="contain"
@@ -25,7 +25,7 @@ const Gallery = ({ photos, onOpen, highlight, setHighlight }: Props) => {
               src={pic}
               alt={String(i)}
               key={i}
-              onClick={() => setHighlight(pic)}
+              onClick={() => setHighlight(i)}
               cursor="pointer"
             />
           ))}
