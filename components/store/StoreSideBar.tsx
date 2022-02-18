@@ -23,6 +23,8 @@ interface Props {
   setCategoryFilter: React.Dispatch<React.SetStateAction<string>>;
   setBrandFilter: React.Dispatch<React.SetStateAction<string>>;
   setColorFilter: React.Dispatch<React.SetStateAction<string>>;
+  priceRange: number[];
+  setPriceRange: React.Dispatch<React.SetStateAction<number[]>>;
 }
 
 const capitalize = (str: string) => {
@@ -35,6 +37,8 @@ const StoreSideBar = ({
   setCategoryFilter,
   setBrandFilter,
   setColorFilter,
+  priceRange,
+  setPriceRange,
 }: Props) => {
   const router = useRouter();
 
@@ -43,7 +47,6 @@ const StoreSideBar = ({
   const [colors, setColors] = useState<Set<String>>(new Set());
   const [minPrice, setMinPrice] = useState(1000);
   const [maxPrice, setMaxPrice] = useState(0);
-  const [priceRange, setPriceRange] = useState<number[]>([90, 3425]);
 
   useEffect(() => {
     if (products) {
@@ -166,19 +169,6 @@ const StoreSideBar = ({
               ))}
             </Flex>
           </AccordionPanel>
-        </AccordionItem>
-
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Genre
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-
-          <AccordionPanel pb={4}>Hello</AccordionPanel>
         </AccordionItem>
 
         <AccordionItem>

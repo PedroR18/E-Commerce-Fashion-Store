@@ -20,6 +20,7 @@ const Store: NextPage = () => {
   const [categoryFilter, setCategoryFilter] = useState('');
   const [brandFilter, setBrandFilter] = useState('');
   const [colorFilter, setColorFilter] = useState('');
+  const [priceRange, setPriceRange] = useState<number[]>([90, 3425]);
 
   const [update, setUpdate] = useState(false);
 
@@ -62,6 +63,16 @@ const Store: NextPage = () => {
           ])
       );
     }
+
+    setFilterResults(
+      (prev) =>
+        new Set([
+          ...Array.from(prev).filter(
+            (el) => el.price >= priceRange[0] && el.price <= priceRange[1]
+          ),
+        ])
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 
   useEffect(() => {
@@ -106,11 +117,28 @@ const Store: NextPage = () => {
   }, [colorFilter]);
 
   useEffect(() => {
-    if (!colorFilter && !categoryFilter && !brandFilter) {
+    setFilterResults(
+      (prev) =>
+        new Set([
+          ...Array.from(prev).filter(
+            (el) => el.price >= priceRange[0] && el.price <= priceRange[1]
+          ),
+        ])
+    );
+  }, [priceRange]);
+
+  useEffect(() => {
+    if (
+      !colorFilter &&
+      !categoryFilter &&
+      !brandFilter &&
+      priceRange[0] === 90 &&
+      priceRange[1] === 3425
+    ) {
       setFilterResults(new Set(products));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [colorFilter, categoryFilter, brandFilter]);
+  }, [colorFilter, categoryFilter, brandFilter, priceRange]);
 
   return (
     <Flex>
@@ -119,6 +147,8 @@ const Store: NextPage = () => {
         setCategoryFilter={setCategoryFilter}
         setBrandFilter={setBrandFilter}
         setColorFilter={setColorFilter}
+        priceRange={priceRange}
+        setPriceRange={setPriceRange}
       />
       <Box height="100vh" width="300px" />
       <Flex direction="column">
@@ -175,10 +205,28 @@ const Store: NextPage = () => {
                 />
               </Tag>
             )}
+
+            {(priceRange[0] !== 90 || priceRange[1] !== 3425) && (
+              <Tag
+                size="md"
+                borderRadius="full"
+                variant="solid"
+                colorScheme="green"
+                key={`${priceRange[0]}-${priceRange[1]}`}
+              >
+                <TagLabel>{`$ ${priceRange[0]} - $ ${priceRange[1]}`}</TagLabel>
+                <TagCloseButton
+                  onClick={() => {
+                    setPriceRange([90, 3425]);
+                    setUpdate(!update);
+                  }}
+                />
+              </Tag>
+            )}
           </HStack>
         </Flex>
         <Grid templateColumns="repeat(5, 400px)" gap={5} m={5}>
-          {categoryFilter || brandFilter || colorFilter
+          {categoryFilter || brandFilter || colorFilter || priceRange
             ? Array.from(filterResults).map((product) => {
                 return <ProductCard key={product.id} product={product} />;
               })
