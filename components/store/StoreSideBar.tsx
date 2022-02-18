@@ -20,6 +20,9 @@ import { Product } from '../../utilities/interface';
 
 interface Props {
   products: Product[];
+  setCategoryFilter: React.Dispatch<React.SetStateAction<string>>;
+  setBrandFilter: React.Dispatch<React.SetStateAction<string>>;
+  setColorFilter: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const capitalize = (str: string) => {
@@ -27,7 +30,12 @@ const capitalize = (str: string) => {
   return str.charAt(0).toUpperCase() + lower.slice(1);
 };
 
-const StoreSideBar = ({ products }: Props) => {
+const StoreSideBar = ({
+  products,
+  setCategoryFilter,
+  setBrandFilter,
+  setColorFilter,
+}: Props) => {
   const router = useRouter();
 
   const [categories, setCategories] = useState<Set<String>>(new Set());
@@ -35,7 +43,7 @@ const StoreSideBar = ({ products }: Props) => {
   const [colors, setColors] = useState<Set<String>>(new Set());
   const [minPrice, setMinPrice] = useState(1000);
   const [maxPrice, setMaxPrice] = useState(0);
-  const [priceRange, setPriceRange] = useState<number[]>([]);
+  const [priceRange, setPriceRange] = useState<number[]>([90, 3425]);
 
   useEffect(() => {
     if (products) {
@@ -87,7 +95,14 @@ const StoreSideBar = ({ products }: Props) => {
           </h2>
           <AccordionPanel pb={4}>
             {Array.from(categories).map((tag: any) => (
-              <Text key={tag} cursor="pointer" _hover={{ color: 'white' }}>
+              <Text
+                key={tag}
+                cursor="pointer"
+                _hover={{ color: 'white' }}
+                onClick={() => {
+                  setCategoryFilter(tag);
+                }}
+              >
                 {tag}
               </Text>
             ))}
@@ -105,7 +120,14 @@ const StoreSideBar = ({ products }: Props) => {
           </h2>
           <AccordionPanel pb={4}>
             {Array.from(brands).map((brand: any) => (
-              <Text key={brand} cursor="pointer" _hover={{ color: 'white' }}>
+              <Text
+                key={brand}
+                cursor="pointer"
+                _hover={{ color: 'white' }}
+                onClick={() => {
+                  setBrandFilter(brand);
+                }}
+              >
                 {brand}
               </Text>
             ))}
@@ -122,12 +144,27 @@ const StoreSideBar = ({ products }: Props) => {
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            {' '}
-            {Array.from(colors).map((color: any) => (
-              <Text key={color} cursor="pointer" _hover={{ color: 'white' }}>
-                {color}
-              </Text>
-            ))}
+            <Flex direction="column" gap={3}>
+              {Array.from(colors).map((color: any) => (
+                <Flex key={color} gap={3}>
+                  <Box
+                    w={5}
+                    h={5}
+                    bgColor={color.toLowerCase()}
+                    borderRadius="full"
+                  />
+                  <Text
+                    cursor="pointer"
+                    _hover={{ color: 'white' }}
+                    onClick={() => {
+                      setColorFilter(color);
+                    }}
+                  >
+                    {color}
+                  </Text>
+                </Flex>
+              ))}
+            </Flex>
           </AccordionPanel>
         </AccordionItem>
 
@@ -155,6 +192,7 @@ const StoreSideBar = ({ products }: Props) => {
           </h2>
           <AccordionPanel pb={4}>
             <RangeSlider
+              defaultValue={[90, 3425]}
               min={minPrice}
               max={maxPrice}
               onChangeEnd={(val) => setPriceRange(val)}

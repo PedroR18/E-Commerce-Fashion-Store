@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import Gallery from '../../components/store/Gallery';
 import ProductModal from '../../components/store/ProductModal';
-import StoreSideBar from '../../components/store/StoreSideBar';
 import { Product } from '../../utilities/interface';
 import { cartContext } from '../_app';
 
@@ -17,12 +16,11 @@ const ProductPage: NextPage = () => {
   const { setCart } = useContext(cartContext);
   const [currentProduct, setCurrentProduct] = useState<Product>();
   const [highlight, setHighlight] = useState(0);
-  const [products, setProducts] = useState<Product[]>([]);
+
   useEffect(() => {
     fetch('/data/products.json')
       .then((res) => res.json())
       .then((data) => {
-        setProducts(Object.values(data));
         const product: any = Object.values(data).filter(
           (el: any) => el.id === productId
         );
@@ -31,7 +29,6 @@ const ProductPage: NextPage = () => {
   }, [productId]);
   return (
     <Flex>
-      <StoreSideBar products={products} />
       <Box height="100vh" width="300px" />
       <Flex justifyContent="space-around" alignItems="center" width="100%">
         {currentProduct && (
