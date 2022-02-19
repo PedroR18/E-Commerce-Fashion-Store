@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Flex,
   Grid,
   HStack,
@@ -8,14 +9,18 @@ import {
   TagLabel,
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import ProductCard from '../components/store/ProductCard';
 import StoreSideBar from '../components/store/StoreSideBar';
 import { Product } from '../utilities/interface';
 
 const Store: NextPage = () => {
+  const router = useRouter();
+  const { collection } = router.query;
   const [products, setProducts] = useState<Product[]>([]);
   const [filterResults, setFilterResults] = useState<Set<Product>>(new Set());
+  const [genre, setGenre] = useState('');
 
   const [categoryFilter, setCategoryFilter] = useState('');
   const [brandFilter, setBrandFilter] = useState('');
@@ -25,13 +30,42 @@ const Store: NextPage = () => {
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    fetch('/data/products.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(Object.values(data));
-        setFilterResults(new Set(Object.values(data)));
-      });
-  }, []);
+    if (router.isReady) {
+      setCategoryFilter('');
+      setBrandFilter('');
+      setColorFilter('');
+      setPriceRange([90, 3425]);
+      setFilterResults(new Set());
+      setGenre(String(collection));
+    }
+  }, [router.isReady, collection]);
+
+  useEffect(() => {
+    if (router.isReady) {
+      if (!genre) {
+        fetch('/data/products.json')
+          .then((res) => res.json())
+          .then((data) => {
+            setProducts(Object.values(data));
+            setFilterResults(new Set(Object.values(data)));
+          });
+      }
+      if (genre) {
+        fetch('/data/products.json')
+          .then((res) => res.json())
+          .then((data) => {
+            Object.values(data).forEach((product: any) => {
+              if (product.genre === genre) {
+                setProducts((prev) => [...prev, product]);
+                setFilterResults(
+                  (prev) => new Set([...Array.from(prev), product])
+                );
+              }
+            });
+          });
+      }
+    }
+  }, [genre]);
 
   useEffect(() => {
     setFilterResults(new Set(products));
@@ -152,7 +186,31 @@ const Store: NextPage = () => {
       />
       <Box height="100vh" width="300px" />
       <Flex direction="column">
-        <Flex height="100px" width="100%" bgColor="grey">
+        <Flex
+          height="50px"
+          width="100%"
+          bgColor="grey"
+          justifyContent="space-around"
+        >
+          <Button
+            onClick={() =>
+              router.push({ pathname: '/store', query: { collection: 'men' } })
+            }
+          >
+            Men
+          </Button>
+          <Button
+            onClick={() =>
+              router.push({
+                pathname: '/store',
+                query: { collection: 'women' },
+              })
+            }
+          >
+            Women
+          </Button>
+        </Flex>
+        <Flex height="50px" width="100%" bgColor="grey">
           <HStack spacing={4}>
             {categoryFilter && (
               <Tag
@@ -225,6 +283,7 @@ const Store: NextPage = () => {
             )}
           </HStack>
         </Flex>
+
         <Grid templateColumns="repeat(5, 400px)" gap={5} m={5}>
           {categoryFilter || brandFilter || colorFilter || priceRange
             ? Array.from(filterResults).map((product) => {

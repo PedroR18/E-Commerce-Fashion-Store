@@ -22,7 +22,7 @@ const GenreSeparator = () => {
         onMouseOver={() => setActive('left')}
         onMouseLeave={() => setActive(undefined)}
         onClick={() =>
-          router.push({ pathname: '/store', query: { for: 'women' } })
+          router.push({ pathname: '/store', query: { collection: 'women' } })
         }
         width={['100vw', '100vw', '100vw', '50vw']}
         height={['50vh', '50vh', '50vh', '100vh']}
@@ -75,7 +75,7 @@ const GenreSeparator = () => {
         cursor="pointer"
         onMouseOver={() => setActive('right')}
         onClick={() =>
-          router.push({ pathname: '/store', query: { for: 'men' } })
+          router.push({ pathname: '/store', query: { collection: 'men' } })
         }
         onMouseLeave={() => setActive(undefined)}
         width={['100vw', '100vw', '100vw', '50vw']}
