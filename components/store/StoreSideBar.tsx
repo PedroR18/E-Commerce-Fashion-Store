@@ -13,18 +13,16 @@ import {
   RangeSliderTrack,
   Text,
 } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { AiOutlineShopping } from 'react-icons/ai';
 import { Product } from '../../utilities/interface';
 
 interface Props {
-  products: Product[];
   setCategoryFilter: React.Dispatch<React.SetStateAction<string>>;
   setBrandFilter: React.Dispatch<React.SetStateAction<string>>;
   setColorFilter: React.Dispatch<React.SetStateAction<string>>;
   priceRange: number[];
   setPriceRange: React.Dispatch<React.SetStateAction<number[]>>;
+  filterResults: Set<Product>;
 }
 
 const capitalize = (str: string) => {
@@ -33,15 +31,13 @@ const capitalize = (str: string) => {
 };
 
 const StoreSideBar = ({
-  products,
   setCategoryFilter,
   setBrandFilter,
   setColorFilter,
   priceRange,
   setPriceRange,
+  filterResults,
 }: Props) => {
-  const router = useRouter();
-
   const [categories, setCategories] = useState<Set<String>>(new Set());
   const [brands, setBrands] = useState<Set<String>>(new Set());
   const [colors, setColors] = useState<Set<String>>(new Set());
@@ -49,43 +45,38 @@ const StoreSideBar = ({
   const [maxPrice, setMaxPrice] = useState(0);
 
   useEffect(() => {
-    if (products) {
-      let min = 10000;
-      let max = 0;
-      products.forEach((product) => {
-        setCategories(
-          (prev) => new Set([...Array.from(prev), capitalize(product.tag)])
-        );
-        setBrands((prev) => new Set([...Array.from(prev), product.brand]));
-        setColors((prev) => new Set([...Array.from(prev), ...product.colors]));
+    setCategories(new Set());
+    setBrands(new Set());
+    setColors(new Set());
+    let min = 10000;
+    let max = 0;
+    Array.from(filterResults).forEach((product) => {
+      setCategories(
+        (prev) => new Set([...Array.from(prev), capitalize(product.tag)])
+      );
+      setBrands((prev) => new Set([...Array.from(prev), product.brand]));
+      setColors((prev) => new Set([...Array.from(prev), ...product.colors]));
 
-        if (product.price < min) {
-          min = product.price;
-        }
-        if (product.price > max) {
-          max = product.price;
-        }
-      });
-      setMinPrice(min);
-      setMaxPrice(max);
-    }
-  }, [products]);
+      if (product.price < min) {
+        min = product.price;
+      }
+      if (product.price > max) {
+        max = product.price;
+      }
+    });
+    setMinPrice(min);
+    setMaxPrice(max);
+  }, [filterResults]);
 
   return (
     <Flex
       width="300px"
       height="100vh"
-      bgColor="grey"
       position="fixed"
       direction="column"
       gap={5}
       alignItems="center"
     >
-      <AiOutlineShopping
-        size={50}
-        onClick={() => router.push('/cart')}
-        cursor="pointer"
-      />
       <Accordion defaultIndex={[0]} allowToggle allowMultiple w="90%">
         <AccordionItem>
           <h2>

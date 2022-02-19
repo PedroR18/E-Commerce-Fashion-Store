@@ -1,14 +1,40 @@
-import { cartActions, Product } from './interface';
+import { cartActions, CartItem } from './interface';
 
-const cartReducer = (state: Product[], action: cartActions) => {
+const cartReducer = (state: CartItem[], action: cartActions) => {
   const { type, payload } = action;
   switch (type) {
     case 'addToCart':
       if (state) {
-        return [...state, payload];
+        const arr: CartItem[] = [];
+        let incremented = false;
+        state.forEach((item: CartItem) => {
+          if (
+            item.product.id === payload.product.id &&
+            item.size === payload.size
+          ) {
+            arr.push({
+              product: item.product,
+              size: item.size,
+              quantity: item.quantity + 1,
+            });
+            incremented = true;
+          } else {
+            arr.push({
+              product: item.product,
+              size: item.size,
+              quantity: item.quantity,
+            });
+          }
+        });
+        if (incremented) {
+          return arr;
+        } else return [...arr, payload];
       } else return [payload];
     case 'removeFromCart':
-      return state.filter((el: Product) => el.id !== payload!.id);
+      return state.filter(
+        (el: CartItem) =>
+          el.product.id !== payload!.product.id && el.size !== payload!.size
+      );
     case 'clearCart':
       return [];
     case 'setCart':

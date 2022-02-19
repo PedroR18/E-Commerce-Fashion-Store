@@ -10,8 +10,14 @@ interface Product {
   genre: string;
 }
 
+interface CartItem {
+  product: Product;
+  size: string;
+  quantity: number;
+}
+
 interface ContextType {
-  cart: Product[];
+  cart: CartItem[];
   setCart: React.Dispatch<cartActions>;
 }
 
@@ -20,4 +26,4 @@ interface cartActions {
   payload: any;
 }
 
-export type { Product, ContextType, cartActions };
+export type { Product, ContextType, cartActions, CartItem };
