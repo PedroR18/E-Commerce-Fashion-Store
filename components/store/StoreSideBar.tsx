@@ -92,7 +92,11 @@ const StoreSideBar = ({
               <Text
                 key={tag}
                 cursor="pointer"
-                _hover={{ color: 'white' }}
+                transition=".2s ease-in"
+                _hover={{
+                  color: 'grey',
+                  transform: 'scale(1.05)',
+                }}
                 onClick={() => {
                   setCategoryFilter(tag);
                 }}
@@ -117,7 +121,8 @@ const StoreSideBar = ({
               <Text
                 key={brand}
                 cursor="pointer"
-                _hover={{ color: 'white' }}
+                transition=".2s ease-in"
+                _hover={{ color: 'grey', transform: 'scale(1.05)' }}
                 onClick={() => {
                   setBrandFilter(brand);
                 }}
@@ -140,16 +145,21 @@ const StoreSideBar = ({
           <AccordionPanel pb={4}>
             <Flex direction="column" gap={3}>
               {Array.from(colors).map((color: any) => (
-                <Flex key={color} gap={3}>
+                <Flex
+                  key={color}
+                  gap={3}
+                  cursor="pointer"
+                  transition=".2s ease-in"
+                  _hover={{ color: 'grey', transform: 'scale(1.05)' }}
+                >
                   <Box
                     w={5}
                     h={5}
                     bgColor={color.toLowerCase()}
                     borderRadius="full"
+                    border="1px solid grey"
                   />
                   <Text
-                    cursor="pointer"
-                    _hover={{ color: 'white' }}
                     onClick={() => {
                       setColorFilter(color);
                     }}
@@ -173,17 +183,23 @@ const StoreSideBar = ({
           </h2>
           <AccordionPanel pb={4}>
             <RangeSlider
+              mt="12"
+              colorScheme="blackAlpha"
               defaultValue={[90, 3425]}
               min={minPrice}
               max={maxPrice}
               onChangeEnd={(val) => setPriceRange(val)}
             >
-              <RangeSliderMark value={minPrice}>$ {minPrice}</RangeSliderMark>
-              <RangeSliderMark value={maxPrice}>$ {maxPrice}</RangeSliderMark>
+              <RangeSliderMark value={minPrice} mt="4">
+                $ {minPrice}
+              </RangeSliderMark>
+              <RangeSliderMark value={maxPrice} mt="4" w="100px">
+                $ {maxPrice}
+              </RangeSliderMark>
               <RangeSliderMark
                 value={priceRange[0]}
                 textAlign="center"
-                bg="blue.500"
+                bg="rgb(113, 128, 150)"
                 color="white"
                 mt="-10"
                 ml="-5"
@@ -194,7 +210,7 @@ const StoreSideBar = ({
               <RangeSliderMark
                 value={priceRange[1]}
                 textAlign="center"
-                bg="blue.500"
+                bg="rgb(113, 128, 150)"
                 color="white"
                 mt="-10"
                 ml="-5"
@@ -202,7 +218,7 @@ const StoreSideBar = ({
               >
                 $ {priceRange[1]}
               </RangeSliderMark>
-              <RangeSliderTrack>
+              <RangeSliderTrack color="green">
                 <RangeSliderFilledTrack />
               </RangeSliderTrack>
               <RangeSliderThumb index={0} />

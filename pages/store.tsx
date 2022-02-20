@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Flex,
   Grid,
   HStack,
@@ -68,6 +67,7 @@ const Store: NextPage = () => {
           });
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [genre]);
 
   useEffect(() => {
@@ -182,7 +182,7 @@ const Store: NextPage = () => {
 
   return (
     <Flex direction="column">
-      <Navbar />
+      <Navbar collection={String(collection)} />
       <Flex>
         <StoreSideBar
           setCategoryFilter={setCategoryFilter}
@@ -194,41 +194,13 @@ const Store: NextPage = () => {
         />
         <Box height="100vh" width="300px" />
         <Flex direction="column">
-          <Flex
-            height="50px"
-            width="100%"
-            bgColor="grey"
-            justifyContent="space-around"
-          >
-            <Button
-              onClick={() =>
-                router.push({
-                  pathname: '/store',
-                  query: { collection: 'men' },
-                })
-              }
-            >
-              Men
-            </Button>
-            <Button
-              onClick={() =>
-                router.push({
-                  pathname: '/store',
-                  query: { collection: 'women' },
-                })
-              }
-            >
-              Women
-            </Button>
-          </Flex>
-          <Flex height="50px" width="100%" bgColor="grey">
+          <Flex height="50px" width="100%" paddingLeft="10">
             <HStack spacing={4}>
               {categoryFilter && (
                 <Tag
-                  size="md"
+                  size="lg"
                   borderRadius="full"
                   variant="solid"
-                  colorScheme="green"
                   key={categoryFilter}
                 >
                   <TagLabel>{categoryFilter}</TagLabel>
@@ -242,10 +214,9 @@ const Store: NextPage = () => {
               )}
               {brandFilter && (
                 <Tag
-                  size="md"
+                  size="lg"
                   borderRadius="full"
                   variant="solid"
-                  colorScheme="green"
                   key={brandFilter}
                 >
                   <TagLabel>{brandFilter}</TagLabel>
@@ -259,10 +230,9 @@ const Store: NextPage = () => {
               )}
               {colorFilter && (
                 <Tag
-                  size="md"
+                  size="lg"
                   borderRadius="full"
                   variant="solid"
-                  colorScheme="green"
                   key={colorFilter}
                 >
                   <TagLabel>{colorFilter}</TagLabel>
@@ -277,10 +247,9 @@ const Store: NextPage = () => {
 
               {(priceRange[0] !== 90 || priceRange[1] !== 3425) && (
                 <Tag
-                  size="md"
+                  size="lg"
                   borderRadius="full"
                   variant="solid"
-                  colorScheme="green"
                   key={`${priceRange[0]}-${priceRange[1]}`}
                 >
                   <TagLabel>{`$ ${priceRange[0]} - $ ${priceRange[1]}`}</TagLabel>

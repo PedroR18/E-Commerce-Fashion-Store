@@ -11,16 +11,18 @@ const Cart: NextPage = () => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    setTotal(0);
-    cart.forEach((el: CartItem) => {
-      setTotal((prev) => prev + el.product.price * el.quantity);
-      if (el.quantity <= 0) {
-        setCart({ type: 'removeFromCart', payload: el });
-      }
-    });
+    if (cart) {
+      setTotal(0);
+      cart.forEach((el: CartItem) => {
+        setTotal((prev) => prev + el.product.price * el.quantity);
+        if (el.quantity === 0) {
+          setCart({ type: 'removeFromCart', payload: el });
+        }
+      });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart]);
-  if (cart.length !== 0) {
+  if (cart && cart.length !== 0) {
     return (
       <Flex direction="column" justifyContent="center" alignItems="center">
         <Navbar />

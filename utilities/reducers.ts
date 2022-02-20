@@ -48,10 +48,14 @@ const cartReducer = (state: CartItem[], action: cartActions) => {
       });
       return arr;
     case 'removeFromCart':
-      return state.filter(
-        (el: CartItem) =>
-          el.product.id !== payload!.product.id && el.size !== payload!.size
-      );
+      const arr2: CartItem[] = [];
+      state.forEach((item: CartItem) => {
+        if (item.quantity !== 0) {
+          arr2.push(item);
+        }
+      });
+
+      return arr2;
     case 'clearCart':
       return [];
     case 'setCart':
