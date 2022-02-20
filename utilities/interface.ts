@@ -22,7 +22,12 @@ interface ContextType {
 }
 
 interface cartActions {
-  type: 'addToCart' | 'removeFromCart' | 'clearCart' | 'setCart';
+  type:
+    | 'addToCart'
+    | 'updateCartItem'
+    | 'removeFromCart'
+    | 'clearCart'
+    | 'setCart';
   payload: any;
 }
 

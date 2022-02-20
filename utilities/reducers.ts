@@ -30,6 +30,23 @@ const cartReducer = (state: CartItem[], action: cartActions) => {
           return arr;
         } else return [...arr, payload];
       } else return [payload];
+    case 'updateCartItem':
+      const arr: CartItem[] = [];
+      state.forEach((item: CartItem) => {
+        if (
+          item.product.id === payload.product.id &&
+          item.size === payload.size
+        ) {
+          arr.push(payload);
+        } else {
+          arr.push({
+            product: item.product,
+            size: item.size,
+            quantity: item.quantity,
+          });
+        }
+      });
+      return arr;
     case 'removeFromCart':
       return state.filter(
         (el: CartItem) =>
