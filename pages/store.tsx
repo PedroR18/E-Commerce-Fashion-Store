@@ -181,9 +181,15 @@ const Store: NextPage = () => {
   }, [colorFilter, categoryFilter, brandFilter, priceRange]);
 
   return (
-    <Flex direction="column">
+    <Flex
+      direction="column"
+      width="60%"
+      justifyContent="center"
+      alignItems="center"
+      margin="0 auto"
+    >
       <Navbar collection={String(collection)} />
-      <Flex>
+      <Flex width="100%">
         <StoreSideBar
           setCategoryFilter={setCategoryFilter}
           setBrandFilter={setBrandFilter}
@@ -192,8 +198,8 @@ const Store: NextPage = () => {
           setPriceRange={setPriceRange}
           filterResults={filterResults}
         />
-        <Box height="100vh" width="300px" />
-        <Flex direction="column">
+        <Box width="350px" />
+        <Flex direction="column" width="70%">
           <Flex height="50px" width="100%" paddingLeft="10">
             <HStack spacing={4}>
               {categoryFilter && (
@@ -264,7 +270,7 @@ const Store: NextPage = () => {
             </HStack>
           </Flex>
 
-          <Grid templateColumns="repeat(5, 400px)" gap={5} m={5}>
+          <Grid templateColumns="repeat(4, 1fr)" gap={15} m={5}>
             {categoryFilter || brandFilter || colorFilter || priceRange
               ? Array.from(filterResults).map((product) => {
                   return <ProductCard key={product.id} product={product} />;

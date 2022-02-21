@@ -22,7 +22,7 @@ const ProductCard = ({ product }: Props) => {
       <Image
         src={pic}
         alt={product.name}
-        height="400px"
+        height="300px"
         objectFit="contain"
         onMouseOver={() => setPic(product.photos[1])}
         onMouseLeave={() => setPic(product.photos[0])}

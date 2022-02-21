@@ -70,18 +70,17 @@ const StoreSideBar = ({
 
   return (
     <Flex
-      width="300px"
-      height="100vh"
+      width="350px"
       position="fixed"
       direction="column"
       gap={5}
       alignItems="center"
     >
-      <Accordion defaultIndex={[0]} allowToggle allowMultiple w="90%">
+      <Accordion defaultIndex={[0]} allowToggle allowMultiple w="100%">
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex="1" textAlign="left">
+              <Box flex="1" textAlign="left" fontSize="xl">
                 Category
               </Box>
               <AccordionIcon />
@@ -110,7 +109,7 @@ const StoreSideBar = ({
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex="1" textAlign="left">
+              <Box flex="1" textAlign="left" fontSize="xl">
                 Brand
               </Box>
               <AccordionIcon />
@@ -136,7 +135,7 @@ const StoreSideBar = ({
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex="1" textAlign="left">
+              <Box flex="1" textAlign="left" fontSize="xl">
                 Color
               </Box>
               <AccordionIcon />
@@ -175,13 +174,13 @@ const StoreSideBar = ({
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex="1" textAlign="left">
+              <Box flex="1" textAlign="left" fontSize="xl">
                 Price
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
+          <AccordionPanel pb={4} width="90%">
             <RangeSlider
               mt="12"
               colorScheme="blackAlpha"
@@ -199,8 +198,7 @@ const StoreSideBar = ({
               <RangeSliderMark
                 value={priceRange[0]}
                 textAlign="center"
-                bg="rgb(113, 128, 150)"
-                color="white"
+                color="black"
                 mt="-10"
                 ml="-5"
                 w="12"
@@ -210,19 +208,18 @@ const StoreSideBar = ({
               <RangeSliderMark
                 value={priceRange[1]}
                 textAlign="center"
-                bg="rgb(113, 128, 150)"
-                color="white"
+                color="black"
                 mt="-10"
                 ml="-5"
                 w="12"
               >
                 $ {priceRange[1]}
               </RangeSliderMark>
-              <RangeSliderTrack color="green">
+              <RangeSliderTrack>
                 <RangeSliderFilledTrack />
               </RangeSliderTrack>
-              <RangeSliderThumb index={0} />
-              <RangeSliderThumb index={1} />
+              <RangeSliderThumb index={0} bgColor="black" />
+              <RangeSliderThumb index={1} bgColor="black" />
             </RangeSlider>
           </AccordionPanel>
         </AccordionItem>

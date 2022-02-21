@@ -25,9 +25,12 @@ const Navbar = ({ collection }: Props) => {
   return (
     <Flex
       height="100px"
-      width="100vw"
-      justifyContent="space-around"
+      width="100%"
+      justifyContent="space-between"
       alignItems="center"
+      marginTop={14}
+      marginBottom={6}
+      paddingX={10}
     >
       <Flex gap={10}>
         <Text
@@ -67,7 +70,7 @@ const Navbar = ({ collection }: Props) => {
         letterSpacing=".4em"
         transition=".3s ease-in"
         _hover={{ transform: 'scale(1.2)' }}
-        fontSize="4xl"
+        fontSize="5xl"
       >
         FLEX
       </Heading>

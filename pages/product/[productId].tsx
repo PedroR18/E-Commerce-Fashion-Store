@@ -1,8 +1,17 @@
-import { Box, Button, Flex, Select, useDisclosure } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Select,
+  Text,
+  useDisclosure,
+} from '@chakra-ui/react';
 import moment from 'moment';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
+import { AiOutlineStar, AiOutlineTag } from 'react-icons/ai';
+import { MdOutlineLocalShipping } from 'react-icons/md';
 import Gallery from '../../components/store/Gallery';
 import Navbar from '../../components/store/Navbar';
 import ProductModal from '../../components/store/ProductModal';
@@ -34,7 +43,7 @@ const ProductPage: NextPage = () => {
       <Navbar />
       <Flex>
         <Box height="100vh" width="300px" />
-        <Flex justifyContent="space-around" alignItems="center" width="100%">
+        <Flex justifyContent="space-around" alignItems="start" width="100%">
           {currentProduct && (
             <Gallery
               photos={currentProduct!.photos}
@@ -93,6 +102,39 @@ const ProductPage: NextPage = () => {
             highlight={highlight}
           />
         )}
+      </Flex>
+      <Flex direction="column" justifyContent="center" alignItems="center">
+        <Text>Why Flex?</Text>
+        <Flex>
+          <Flex direction="column" justifyContent="center" alignItems="center">
+            <AiOutlineTag />
+            <Text fontWeight="bold">
+              {"The one that you want? We've got it."}
+            </Text>
+            <Text>Shop over 100,000 styles</Text>
+            <Text textDecoration="underline" cursor="pointer">
+              View All
+            </Text>
+          </Flex>
+          <Flex direction="column" justifyContent="center" alignItems="center">
+            <AiOutlineStar />
+            <Text fontWeight="bold">4.7/5 stars and 25,000+ reviews</Text>
+            <Text>You know you can trust us</Text>
+            <Text textDecoration="underline" cursor="pointer">
+              Read Reviews
+            </Text>
+          </Flex>
+          <Flex direction="column" justifyContent="center" alignItems="center">
+            <MdOutlineLocalShipping />
+            <Text fontWeight="bold">
+              Free global returns collection service
+            </Text>
+            <Text>Changed your mind? No problem</Text>
+            <Text textDecoration="underline" cursor="pointer">
+              Read More
+            </Text>
+          </Flex>
+        </Flex>
       </Flex>
     </Flex>
   );
