@@ -22,7 +22,7 @@ interface Props {
   setColorFilter: React.Dispatch<React.SetStateAction<string>>;
   priceRange: number[];
   setPriceRange: React.Dispatch<React.SetStateAction<number[]>>;
-  filterResults: Set<Product>;
+  products: Product[];
 }
 
 const capitalize = (str: string) => {
@@ -36,7 +36,7 @@ const StoreSideBar = ({
   setColorFilter,
   priceRange,
   setPriceRange,
-  filterResults,
+  products,
 }: Props) => {
   const [categories, setCategories] = useState<Set<String>>(new Set());
   const [brands, setBrands] = useState<Set<String>>(new Set());
@@ -50,7 +50,7 @@ const StoreSideBar = ({
     setColors(new Set());
     let min = 10000;
     let max = 0;
-    Array.from(filterResults).forEach((product) => {
+    products.forEach((product) => {
       setCategories(
         (prev) => new Set([...Array.from(prev), capitalize(product.tag)])
       );
@@ -66,7 +66,7 @@ const StoreSideBar = ({
     });
     setMinPrice(min);
     setMaxPrice(max);
-  }, [filterResults]);
+  }, [products]);
 
   return (
     <Flex

@@ -19,7 +19,7 @@ const Store: NextPage = () => {
   const router = useRouter();
   const { collection } = router.query;
   const [products, setProducts] = useState<Product[]>([]);
-  const [filterResults, setFilterResults] = useState<Set<Product>>(new Set());
+  const [fetchedData, setFetchedData] = useState<Product[]>([]);
   const [genre, setGenre] = useState('');
   const [change, setChange] = useState(false);
 
@@ -37,7 +37,7 @@ const Store: NextPage = () => {
       setColorFilter('');
       setPriceRange([90, 3425]);
       setChange(true);
-      setFilterResults(new Set());
+      setProducts([]);
       setGenre(String(collection));
     }
   }, [router.isReady, collection]);
@@ -49,7 +49,7 @@ const Store: NextPage = () => {
           .then((res) => res.json())
           .then((data) => {
             setProducts(Object.values(data));
-            setFilterResults(new Set(Object.values(data)));
+            setFetchedData(Object.values(data));
           });
       }
       if (genre) {
@@ -59,9 +59,7 @@ const Store: NextPage = () => {
             Object.values(data).forEach((product: any) => {
               if (product.genre === genre) {
                 setProducts((prev) => [...prev, product]);
-                setFilterResults(
-                  (prev) => new Set([...Array.from(prev), product])
-                );
+                setFetchedData((prev) => [...prev, product]);
               }
             });
           });
@@ -71,57 +69,42 @@ const Store: NextPage = () => {
   }, [genre]);
 
   useEffect(() => {
-    setFilterResults(new Set(products));
+    setProducts(fetchedData);
     if (categoryFilter) {
-      setFilterResults(
-        (prev) =>
-          new Set([
-            ...Array.from(prev).filter(
-              (el) => el.tag === categoryFilter.toLowerCase()
-            ),
-          ])
-      );
+      setProducts((prev) => [
+        ...Array.from(prev).filter(
+          (el) => el.tag === categoryFilter.toLowerCase()
+        ),
+      ]);
     }
 
     if (brandFilter) {
-      setFilterResults(
-        (prev) =>
-          new Set([
-            ...Array.from(prev).filter((el) => el.brand === brandFilter),
-          ])
-      );
+      setProducts((prev) => [
+        ...Array.from(prev).filter((el) => el.brand === brandFilter),
+      ]);
     }
 
     if (colorFilter) {
-      setFilterResults(
-        (prev) =>
-          new Set([
-            ...Array.from(prev).filter((el) => el.colors.includes(colorFilter)),
-          ])
-      );
+      setProducts((prev) => [
+        ...Array.from(prev).filter((el) => el.colors.includes(colorFilter)),
+      ]);
     }
 
-    setFilterResults(
-      (prev) =>
-        new Set([
-          ...Array.from(prev).filter(
-            (el) => el.price >= priceRange[0] && el.price <= priceRange[1]
-          ),
-        ])
-    );
+    setProducts((prev) => [
+      ...Array.from(prev).filter(
+        (el) => el.price >= priceRange[0] && el.price <= priceRange[1]
+      ),
+    ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 
   useEffect(() => {
     if (categoryFilter) {
-      setFilterResults(
-        (prev) =>
-          new Set([
-            ...Array.from(prev).filter(
-              (el) => el.tag === categoryFilter.toLowerCase()
-            ),
-          ])
-      );
+      setProducts((prev) => [
+        ...Array.from(prev).filter(
+          (el) => el.tag === categoryFilter.toLowerCase()
+        ),
+      ]);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -129,12 +112,9 @@ const Store: NextPage = () => {
 
   useEffect(() => {
     if (brandFilter) {
-      setFilterResults(
-        (prev) =>
-          new Set([
-            ...Array.from(prev).filter((el) => el.brand === brandFilter),
-          ])
-      );
+      setProducts((prev) => [
+        ...Array.from(prev).filter((el) => el.brand === brandFilter),
+      ]);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -142,26 +122,20 @@ const Store: NextPage = () => {
 
   useEffect(() => {
     if (colorFilter) {
-      setFilterResults(
-        (prev) =>
-          new Set([
-            ...Array.from(prev).filter((el) => el.colors.includes(colorFilter)),
-          ])
-      );
+      setProducts((prev) => [
+        ...Array.from(prev).filter((el) => el.colors.includes(colorFilter)),
+      ]);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colorFilter]);
 
   useEffect(() => {
-    setFilterResults(
-      (prev) =>
-        new Set([
-          ...Array.from(prev).filter(
-            (el) => el.price >= priceRange[0] && el.price <= priceRange[1]
-          ),
-        ])
-    );
+    setProducts((prev) => [
+      ...Array.from(prev).filter(
+        (el) => el.price >= priceRange[0] && el.price <= priceRange[1]
+      ),
+    ]);
   }, [priceRange]);
 
   useEffect(() => {
@@ -173,7 +147,7 @@ const Store: NextPage = () => {
         priceRange[0] === 90 &&
         priceRange[1] === 3425
       ) {
-        setFilterResults(new Set(products));
+        setProducts(fetchedData);
       }
       setChange(false);
     }
@@ -196,7 +170,7 @@ const Store: NextPage = () => {
           setColorFilter={setColorFilter}
           priceRange={priceRange}
           setPriceRange={setPriceRange}
-          filterResults={filterResults}
+          products={products}
         />
         <Box width="300px" />
         <Flex direction="column" width="100%">
@@ -272,7 +246,7 @@ const Store: NextPage = () => {
 
           <Grid templateColumns="repeat(4, 1fr)" gap={10} m={5} mr={0}>
             {categoryFilter || brandFilter || colorFilter || priceRange
-              ? Array.from(filterResults).map((product) => {
+              ? products.map((product) => {
                   return <ProductCard key={product.id} product={product} />;
                 })
               : products.map((product) => {
