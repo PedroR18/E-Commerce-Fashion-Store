@@ -189,7 +189,7 @@ const Store: NextPage = () => {
       margin="0 auto"
     >
       <Navbar collection={String(collection)} />
-      <Flex width="100%">
+      <Flex width="100%" gap={12}>
         <StoreSideBar
           setCategoryFilter={setCategoryFilter}
           setBrandFilter={setBrandFilter}
@@ -198,8 +198,8 @@ const Store: NextPage = () => {
           setPriceRange={setPriceRange}
           filterResults={filterResults}
         />
-        <Box width="350px" />
-        <Flex direction="column" width="70%">
+        <Box width="300px" />
+        <Flex direction="column" width="100%">
           <Flex height="50px" width="100%" paddingLeft="10">
             <HStack spacing={4}>
               {categoryFilter && (
@@ -270,7 +270,7 @@ const Store: NextPage = () => {
             </HStack>
           </Flex>
 
-          <Grid templateColumns="repeat(4, 1fr)" gap={15} m={5}>
+          <Grid templateColumns="repeat(4, 1fr)" gap={10} m={5} mr={0}>
             {categoryFilter || brandFilter || colorFilter || priceRange
               ? Array.from(filterResults).map((product) => {
                   return <ProductCard key={product.id} product={product} />;

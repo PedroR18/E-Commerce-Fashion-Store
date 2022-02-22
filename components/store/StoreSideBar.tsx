@@ -70,7 +70,7 @@ const StoreSideBar = ({
 
   return (
     <Flex
-      width="350px"
+      width="300px"
       position="fixed"
       direction="column"
       gap={5}
