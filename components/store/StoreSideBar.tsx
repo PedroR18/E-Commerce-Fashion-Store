@@ -185,8 +185,8 @@ const StoreSideBar = ({
               mt="12"
               colorScheme="blackAlpha"
               defaultValue={[90, 3425]}
-              min={minPrice}
-              max={maxPrice}
+              min={90}
+              max={3425}
               onChangeEnd={(val) => setPriceRange(val)}
             >
               <RangeSliderMark value={minPrice} mt="4">

@@ -10,6 +10,7 @@ import {
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Footer from '../components/store/Footer';
 import Navbar from '../components/store/Navbar';
 import ProductCard from '../components/store/ProductCard';
 import StoreSideBar from '../components/store/StoreSideBar';
@@ -44,29 +45,33 @@ const Store: NextPage = () => {
 
   useEffect(() => {
     if (router.isReady) {
-      if (!genre) {
-        fetch('/data/products.json')
-          .then((res) => res.json())
-          .then((data) => {
-            setProducts(Object.values(data));
-            setFetchedData(Object.values(data));
-          });
-      }
-      if (genre) {
-        fetch('/data/products.json')
-          .then((res) => res.json())
-          .then((data) => {
-            Object.values(data).forEach((product: any) => {
-              if (product.genre === genre) {
-                setProducts((prev) => [...prev, product]);
-                setFetchedData((prev) => [...prev, product]);
-              }
-            });
-          });
-      }
+      fetch('/data/products.json')
+        .then((res) => res.json())
+        .then((data) => {
+          if (genre === 'men' || genre === 'women') {
+            const arr = Array.from(
+              (Object.values(data) as Product[])
+                .reduce((map, obj) => map.set(obj.id, obj), new Map())
+                .values()
+            ).filter((product) => product.genre === genre);
+            setFetchedData(arr);
+            setProducts(arr);
+          } else {
+            const arr = Array.from(
+              (Object.values(data) as Product[])
+                .reduce((map, obj) => map.set(obj.id, obj), new Map())
+                .values()
+            );
+            setFetchedData(arr);
+            setProducts(arr);
+          }
+        });
+
+      //
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [genre]);
+  }, [genre, router.isReady]);
 
   useEffect(() => {
     setProducts(fetchedData);
@@ -255,6 +260,7 @@ const Store: NextPage = () => {
           </Grid>
         </Flex>
       </Flex>
+      <Footer />
     </Flex>
   );
 };

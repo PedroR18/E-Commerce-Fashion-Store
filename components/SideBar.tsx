@@ -18,28 +18,36 @@ const SideBar = () => {
   const [slides, setSlides] = useState<Slide[]>([]);
 
   useEffect(() => {
-    setSlides([
-      { value: 0, position: 0 },
-      { value: 1, position: window.innerHeight },
-      { value: 2, position: window.innerHeight * 2 },
-      { value: 3, position: window.innerHeight * 3 },
-      { value: 4, position: window.innerHeight * 4 },
-    ]);
-    if (typeof window !== undefined) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY === 0) {
-          setActiveSlide(0);
-        } else if (window.scrollY === window.innerHeight) {
-          setActiveSlide(1);
-        } else if (window.scrollY / 2 === window.innerHeight) {
-          setActiveSlide(2);
-        } else if (window.scrollY / 3 === window.innerHeight) {
-          setActiveSlide(3);
-        } else if (window.scrollY / 4 === window.innerHeight) {
-          setActiveSlide(4);
-        }
-      });
+    let mounted = true;
+
+    if (mounted) {
+      setSlides([
+        { value: 0, position: 0 },
+        { value: 1, position: window.innerHeight },
+        { value: 2, position: window.innerHeight * 2 },
+        { value: 3, position: window.innerHeight * 3 },
+        { value: 4, position: window.innerHeight * 4 },
+      ]);
+      if (typeof window !== undefined) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY === 0) {
+            setActiveSlide(0);
+          } else if (window.scrollY === window.innerHeight) {
+            setActiveSlide(1);
+          } else if (window.scrollY / 2 === window.innerHeight) {
+            setActiveSlide(2);
+          } else if (window.scrollY / 3 === window.innerHeight) {
+            setActiveSlide(3);
+          } else if (window.scrollY / 4 === window.innerHeight) {
+            setActiveSlide(4);
+          }
+        });
+      }
     }
+
+    return () => {
+      mounted = false;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

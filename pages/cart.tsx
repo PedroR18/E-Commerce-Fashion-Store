@@ -2,6 +2,7 @@ import { Button, Flex, Image, Select, Text } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import { useContext, useEffect, useState } from 'react';
 import EmptyCart from '../components/store/EmptyCart';
+import Footer from '../components/store/Footer';
 import Navbar from '../components/store/Navbar';
 import { CartItem } from '../utilities/interface';
 import { cartContext } from './_app';
@@ -111,6 +112,7 @@ const Cart: NextPage = () => {
       <Flex direction="column" justifyContent="center" alignItems="center">
         <Navbar />
         <EmptyCart />
+        <Footer />
       </Flex>
     );
 };

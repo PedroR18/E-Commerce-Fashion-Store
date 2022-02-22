@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import { AiOutlineStar, AiOutlineTag } from 'react-icons/ai';
 import { MdOutlineLocalShipping } from 'react-icons/md';
+import Footer from '../../components/store/Footer';
 import Gallery from '../../components/store/Gallery';
 import Navbar from '../../components/store/Navbar';
 import ProductModal from '../../components/store/ProductModal';
@@ -136,6 +137,7 @@ const ProductPage: NextPage = () => {
           </Flex>
         </Flex>
       </Flex>
+      <Footer />
     </Flex>
   );
 };
