@@ -21,7 +21,7 @@ interface Props {
 
 const ProductModal = ({ isOpen, onClose, photos, highlight }: Props) => {
   return (
-    <Modal onClose={onClose} isOpen={isOpen}>
+    <Modal onClose={onClose} isOpen={isOpen} size="6xl">
       <ModalOverlay />
       <ModalContent>
         <ModalCloseButton />
@@ -41,6 +41,7 @@ const ProductModal = ({ isOpen, onClose, photos, highlight }: Props) => {
                     src={pic}
                     h="800px"
                     objectFit="contain"
+                    margin="0 auto"
                   />
                 </SwiperSlide>
               ))}

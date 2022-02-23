@@ -6,11 +6,6 @@ import {
   AccordionPanel,
   Box,
   Flex,
-  RangeSlider,
-  RangeSliderFilledTrack,
-  RangeSliderMark,
-  RangeSliderThumb,
-  RangeSliderTrack,
   Text,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
@@ -20,8 +15,6 @@ interface Props {
   setCategoryFilter: React.Dispatch<React.SetStateAction<string>>;
   setBrandFilter: React.Dispatch<React.SetStateAction<string>>;
   setColorFilter: React.Dispatch<React.SetStateAction<string>>;
-  priceRange: number[];
-  setPriceRange: React.Dispatch<React.SetStateAction<number[]>>;
   products: Product[];
 }
 
@@ -34,38 +27,24 @@ const StoreSideBar = ({
   setCategoryFilter,
   setBrandFilter,
   setColorFilter,
-  priceRange,
-  setPriceRange,
+
   products,
 }: Props) => {
   const [categories, setCategories] = useState<Set<String>>(new Set());
   const [brands, setBrands] = useState<Set<String>>(new Set());
   const [colors, setColors] = useState<Set<String>>(new Set());
-  const [minPrice, setMinPrice] = useState(1000);
-  const [maxPrice, setMaxPrice] = useState(0);
 
   useEffect(() => {
     setCategories(new Set());
     setBrands(new Set());
     setColors(new Set());
-    let min = 10000;
-    let max = 0;
     products.forEach((product) => {
       setCategories(
         (prev) => new Set([...Array.from(prev), capitalize(product.tag)])
       );
       setBrands((prev) => new Set([...Array.from(prev), product.brand]));
       setColors((prev) => new Set([...Array.from(prev), ...product.colors]));
-
-      if (product.price < min) {
-        min = product.price;
-      }
-      if (product.price > max) {
-        max = product.price;
-      }
     });
-    setMinPrice(min);
-    setMaxPrice(max);
   }, [products]);
 
   return (
@@ -168,59 +147,6 @@ const StoreSideBar = ({
                 </Flex>
               ))}
             </Flex>
-          </AccordionPanel>
-        </AccordionItem>
-
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left" fontSize="xl">
-                Price
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4} width="90%">
-            <RangeSlider
-              mt="12"
-              colorScheme="blackAlpha"
-              defaultValue={[90, 3425]}
-              min={90}
-              max={3425}
-              onChangeEnd={(val) => setPriceRange(val)}
-            >
-              <RangeSliderMark value={minPrice} mt="4">
-                $ {minPrice}
-              </RangeSliderMark>
-              <RangeSliderMark value={maxPrice} mt="4" w="100px">
-                $ {maxPrice}
-              </RangeSliderMark>
-              <RangeSliderMark
-                value={priceRange[0]}
-                textAlign="center"
-                color="black"
-                mt="-10"
-                ml="-5"
-                w="12"
-              >
-                $ {priceRange[0]}
-              </RangeSliderMark>
-              <RangeSliderMark
-                value={priceRange[1]}
-                textAlign="center"
-                color="black"
-                mt="-10"
-                ml="-5"
-                w="12"
-              >
-                $ {priceRange[1]}
-              </RangeSliderMark>
-              <RangeSliderTrack>
-                <RangeSliderFilledTrack />
-              </RangeSliderTrack>
-              <RangeSliderThumb index={0} bgColor="black" />
-              <RangeSliderThumb index={1} bgColor="black" />
-            </RangeSlider>
           </AccordionPanel>
         </AccordionItem>
       </Accordion>

@@ -25,7 +25,13 @@ const Cart: NextPage = () => {
   }, [cart]);
   if (cart && cart.length !== 0) {
     return (
-      <Flex direction="column" justifyContent="center" alignItems="center">
+      <Flex
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        width="60%"
+        margin="0 auto"
+      >
         <Navbar />
         <Flex width="80%" gap={10}>
           <Flex
@@ -109,7 +115,13 @@ const Cart: NextPage = () => {
     );
   } else
     return (
-      <Flex direction="column" justifyContent="center" alignItems="center">
+      <Flex
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        width="60%"
+        margin="0 auto"
+      >
         <Navbar />
         <EmptyCart />
         <Footer />

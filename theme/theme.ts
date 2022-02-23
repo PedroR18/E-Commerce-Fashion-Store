@@ -13,6 +13,9 @@ const theme = extendTheme({
         overflowX: 'hidden',
         scrollBehavior: 'smooth',
       },
+      '.swiper-button-next': { color: 'black' },
+      '.swiper-button-prev': { color: 'black' },
+      '.swiper-pagination-bullet-active': { bgColor: 'black' },
     },
   },
 });

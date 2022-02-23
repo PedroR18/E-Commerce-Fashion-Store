@@ -31,6 +31,9 @@ const Navbar = ({ collection }: Props) => {
       marginTop={14}
       marginBottom={6}
       paddingX={10}
+      position="sticky"
+      top={0}
+      bgColor="whiteAlpha.800"
     >
       <Flex gap={10}>
         <Text
@@ -71,6 +74,11 @@ const Navbar = ({ collection }: Props) => {
         transition=".3s ease-in"
         _hover={{ transform: 'scale(1.2)' }}
         fontSize="5xl"
+        position="absolute"
+        textAlign="center"
+        left={0}
+        right={0}
+        zIndex={-100}
       >
         FLEX
       </Heading>

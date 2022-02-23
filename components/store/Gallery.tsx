@@ -1,4 +1,6 @@
-import { Flex, Grid, Image } from '@chakra-ui/react';
+import { Box, Flex, Image } from '@chakra-ui/react';
+import { useState } from 'react';
+import { AiOutlineZoomIn } from 'react-icons/ai';
 
 interface Props {
   photos: string[];
@@ -8,17 +10,10 @@ interface Props {
 }
 
 const Gallery = ({ photos, onOpen, highlight, setHighlight }: Props) => {
+  const [zoom, setZoom] = useState(false);
   return (
-    <Flex direction="column" gap={5}>
-      <Image
-        src={photos[highlight] || photos[0]}
-        alt="1"
-        height="900px"
-        objectFit="contain"
-        cursor="pointer"
-        onClick={onOpen}
-      />
-      <Grid templateColumns="repeat(5, 1fr)" width="800px" gap={5}>
+    <Flex gap={12} justifyContent="center" alignItems="center">
+      <Flex gap={5} direction="column">
         {photos &&
           photos.map((pic, i) => (
             <Image
@@ -27,9 +22,31 @@ const Gallery = ({ photos, onOpen, highlight, setHighlight }: Props) => {
               key={i}
               onClick={() => setHighlight(i)}
               cursor="pointer"
+              height="100px"
+              objectFit="contain"
             />
           ))}
-      </Grid>
+      </Flex>
+      <Box height="700px" position="relative">
+        <Box
+          position="absolute"
+          right={6}
+          top={6}
+          visibility={zoom ? 'visible' : 'hidden'}
+        >
+          <AiOutlineZoomIn size={30} fill="rgba(0 ,0 ,0, 0.75 )" />
+        </Box>
+        <Image
+          src={photos[highlight] || photos[0]}
+          alt="1"
+          height="100%"
+          objectFit="contain"
+          cursor="pointer"
+          onClick={onOpen}
+          onMouseOver={() => setZoom(true)}
+          onMouseOut={() => setZoom(false)}
+        />
+      </Box>
     </Flex>
   );
 };

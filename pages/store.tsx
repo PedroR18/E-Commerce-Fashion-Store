@@ -27,7 +27,6 @@ const Store: NextPage = () => {
   const [categoryFilter, setCategoryFilter] = useState('');
   const [brandFilter, setBrandFilter] = useState('');
   const [colorFilter, setColorFilter] = useState('');
-  const [priceRange, setPriceRange] = useState<number[]>([90, 3425]);
 
   const [update, setUpdate] = useState(false);
 
@@ -36,7 +35,6 @@ const Store: NextPage = () => {
       setCategoryFilter('');
       setBrandFilter('');
       setColorFilter('');
-      setPriceRange([90, 3425]);
       setChange(true);
       setProducts([]);
       setGenre(String(collection));
@@ -95,11 +93,6 @@ const Store: NextPage = () => {
       ]);
     }
 
-    setProducts((prev) => [
-      ...Array.from(prev).filter(
-        (el) => el.price >= priceRange[0] && el.price <= priceRange[1]
-      ),
-    ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 
@@ -136,28 +129,14 @@ const Store: NextPage = () => {
   }, [colorFilter]);
 
   useEffect(() => {
-    setProducts((prev) => [
-      ...Array.from(prev).filter(
-        (el) => el.price >= priceRange[0] && el.price <= priceRange[1]
-      ),
-    ]);
-  }, [priceRange]);
-
-  useEffect(() => {
     if (!change) {
-      if (
-        !colorFilter &&
-        !categoryFilter &&
-        !brandFilter &&
-        priceRange[0] === 90 &&
-        priceRange[1] === 3425
-      ) {
+      if (!colorFilter && !categoryFilter && !brandFilter) {
         setProducts(fetchedData);
       }
       setChange(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [colorFilter, categoryFilter, brandFilter, priceRange]);
+  }, [colorFilter, categoryFilter, brandFilter]);
 
   return (
     <Flex
@@ -173,8 +152,6 @@ const Store: NextPage = () => {
           setCategoryFilter={setCategoryFilter}
           setBrandFilter={setBrandFilter}
           setColorFilter={setColorFilter}
-          priceRange={priceRange}
-          setPriceRange={setPriceRange}
           products={products}
         />
         <Box width="300px" />
@@ -229,28 +206,17 @@ const Store: NextPage = () => {
                   />
                 </Tag>
               )}
-
-              {(priceRange[0] !== 90 || priceRange[1] !== 3425) && (
-                <Tag
-                  size="lg"
-                  borderRadius="full"
-                  variant="solid"
-                  key={`${priceRange[0]}-${priceRange[1]}`}
-                >
-                  <TagLabel>{`$ ${priceRange[0]} - $ ${priceRange[1]}`}</TagLabel>
-                  <TagCloseButton
-                    onClick={() => {
-                      setPriceRange([90, 3425]);
-                      setUpdate(!update);
-                    }}
-                  />
-                </Tag>
-              )}
             </HStack>
           </Flex>
 
-          <Grid templateColumns="repeat(4, 1fr)" gap={10} m={5} mr={0}>
-            {categoryFilter || brandFilter || colorFilter || priceRange
+          <Grid
+            templateColumns="repeat(4, 1fr)"
+            gap={10}
+            m={5}
+            mr={0}
+            minH="500px"
+          >
+            {categoryFilter || brandFilter || colorFilter
               ? products.map((product) => {
                   return <ProductCard key={product.id} product={product} />;
                 })
