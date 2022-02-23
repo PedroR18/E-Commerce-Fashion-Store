@@ -1,6 +1,7 @@
-import { Button, Flex, Image, Select, Text } from '@chakra-ui/react';
+import { Button, Flex, Text } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import { useContext, useEffect, useState } from 'react';
+import CartCard from '../components/store/CartCard';
 import EmptyCart from '../components/store/EmptyCart';
 import Footer from '../components/store/Footer';
 import Navbar from '../components/store/Navbar';
@@ -33,82 +34,51 @@ const Cart: NextPage = () => {
         margin="0 auto"
       >
         <Navbar />
-        <Flex width="80%" gap={10}>
+        <Flex width="100%" gap={10} justifyContent="space-around">
           <Flex
             direction="column"
-            justifyContent="center"
+            justifyContent="space-around"
             alignItems="center"
-            gap={5}
           >
             {cart &&
               cart.map((el: CartItem) => {
                 return (
-                  <Flex
-                    key={`${el.product.id}-${el.size}`}
-                    width="800px"
-                    height="300px"
-                    bgColor="grey"
-                    borderRadius="2xl"
-                    justifyContent="center"
-                    alignItems="center"
-                  >
-                    <Image
-                      src={el.product.photos[0]}
-                      alt={el.product.name}
-                      width="40%"
-                      height="90%"
-                      objectFit="contain"
-                    />
-                    <Flex
-                      direction="column"
-                      width="50%"
-                      height="100%"
-                      justifyContent="center"
-                      alignItems="center"
-                    >
-                      <Text>{el.product.brand}</Text>
-                      <Text>{el.product.name}</Text>
-                      <Text>Quantity: {el.quantity}</Text>
-                      <Select
-                        onChange={(e) =>
-                          setCart({
-                            type: 'updateCartItem',
-                            payload: {
-                              product: el.product,
-                              size: el.size,
-                              quantity: Number(e.target.value),
-                            },
-                          })
-                        }
-                      >
-                        {[...Array.from(Array(el.quantity + 3).keys())].map(
-                          (num) => (
-                            <option
-                              key={num}
-                              value={num}
-                              selected={num === el.quantity ? true : false}
-                            >
-                              {num}
-                            </option>
-                          )
-                        )}
-                      </Select>
-
-                      <Text>Size: {el.size.toUpperCase()}</Text>
-                      <Text>
-                        $ {Number(el.product.price) * Number(el.quantity)}
-                      </Text>
-                    </Flex>
-                  </Flex>
+                  <CartCard key={`${el.product.id}-${el.size}`} product={el} />
                 );
               })}
           </Flex>
-          <Flex direction="column">
-            <Text> Summary</Text>
-            <Text>SubTotal ${total}.00</Text>
-            <Text>Delivery $24.95</Text>
-            <Text>Total ${total + 24.95}</Text>
-            <Button>Go To Checkout</Button>
+          <Flex direction="column" width="350px" mt={4}>
+            <Text fontSize="1.5em" fontWeight="bold">
+              Summary
+            </Text>
+            <Flex justifyContent="space-between" alignItems="center" mt="6">
+              <Text>SubTotal</Text>
+              <Text fontSize="1.2em">${total}.00</Text>
+            </Flex>
+            <Flex justifyContent="space-between" alignItems="center" my={2}>
+              <Text>Delivery</Text>
+              <Text fontSize="1.2em">$24.95</Text>
+            </Flex>
+            <hr style={{ borderTop: '2px solid black' }} />
+            <Flex justifyContent="space-between" alignItems="center" mt={2}>
+              <Text>Total</Text>
+              <Flex direction="column" justifyContent="center" alignItems="end">
+                <Text fontSize="1.2em" fontWeight="bold">
+                  ${total + 24.95}
+                </Text>
+                <Text fontSize=".9em">Import duties included</Text>
+              </Flex>
+            </Flex>
+            <Button
+              bgColor="black"
+              color="white"
+              _hover={{ bgColor: 'grey' }}
+              mt="6"
+              letterSpacing=".05em"
+              fontSize="1.3em"
+            >
+              Go To Checkout
+            </Button>
           </Flex>
         </Flex>
       </Flex>
@@ -124,6 +94,7 @@ const Cart: NextPage = () => {
       >
         <Navbar />
         <EmptyCart />
+
         <Footer />
       </Flex>
     );
