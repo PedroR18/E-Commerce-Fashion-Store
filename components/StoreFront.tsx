@@ -1,4 +1,5 @@
 import { Box, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { AiOutlineDown } from 'react-icons/ai';
 
@@ -9,6 +10,7 @@ const scrollFun = (to: number) => {
 };
 
 const StoreFront = () => {
+  const router = useRouter();
   const [pageHeight, setPageHeight] = useState(0);
   const [isLargerThan1200] = useMediaQuery('(min-width: 1200px)');
   const [isLargerThan1600] = useMediaQuery('(min-width: 1600px)');
@@ -110,6 +112,7 @@ const StoreFront = () => {
             borderBottom="2px solid black"
             transition=".4s ease-in"
             _hover={{ transform: 'scale(1.1)' }}
+            onClick={() => router.push('/store')}
           >
             Shop new arrivals
           </Text>

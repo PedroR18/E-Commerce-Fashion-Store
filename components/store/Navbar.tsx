@@ -1,18 +1,20 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
-import { AiOutlineShopping } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineShopping } from 'react-icons/ai';
 import { cartContext } from '../../pages/_app';
 import { CartItem } from '../../utilities/interface';
 
 interface Props {
   collection?: string;
+  onOpen?: () => void;
 }
 
-const Navbar = ({ collection }: Props) => {
+const Navbar = ({ collection, onOpen }: Props) => {
   const router = useRouter();
   const { cart } = useContext(cartContext);
   const [cartCount, setCartCount] = useState(0);
+  const [isLargerThan80em] = useMediaQuery('(min-width: 80em)');
 
   useEffect(() => {
     if (cart) {
@@ -35,38 +37,46 @@ const Navbar = ({ collection }: Props) => {
       top={0}
       bgColor="whiteAlpha.800"
     >
-      <Flex gap={10}>
-        <Text
-          cursor="pointer"
-          fontSize="xl"
-          fontWeight={
-            collection ? (collection === 'men' ? 'bold' : 'normal') : 'normal'
-          }
-          onClick={() =>
-            router.push({
-              pathname: '/store',
-              query: { collection: 'men' },
-            })
-          }
-        >
-          Men
-        </Text>
-        <Text
-          cursor="pointer"
-          fontSize="xl"
-          fontWeight={
-            collection ? (collection === 'women' ? 'bold' : 'normal') : 'normal'
-          }
-          onClick={() =>
-            router.push({
-              pathname: '/store',
-              query: { collection: 'women' },
-            })
-          }
-        >
-          Women
-        </Text>
-      </Flex>
+      {isLargerThan80em ? (
+        <Flex gap={10}>
+          <Text
+            cursor="pointer"
+            fontSize="xl"
+            fontWeight={
+              collection ? (collection === 'men' ? 'bold' : 'normal') : 'normal'
+            }
+            onClick={() =>
+              router.push({
+                pathname: '/store',
+                query: { collection: 'men' },
+              })
+            }
+          >
+            Men
+          </Text>
+          <Text
+            cursor="pointer"
+            fontSize="xl"
+            fontWeight={
+              collection
+                ? collection === 'women'
+                  ? 'bold'
+                  : 'normal'
+                : 'normal'
+            }
+            onClick={() =>
+              router.push({
+                pathname: '/store',
+                query: { collection: 'women' },
+              })
+            }
+          >
+            Women
+          </Text>
+        </Flex>
+      ) : (
+        <AiOutlineMenu size={30} cursor="pointer" onClick={onOpen} />
+      )}
       <Heading
         cursor="pointer"
         onClick={() => router.push('/')}

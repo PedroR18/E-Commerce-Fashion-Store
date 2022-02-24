@@ -1,19 +1,36 @@
-import { Button, Flex, Select, Text, useDisclosure } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Select,
+  Text,
+  useDisclosure,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import moment from 'moment';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
-import { AiOutlineStar, AiOutlineTag } from 'react-icons/ai';
-import { MdOutlineLocalShipping } from 'react-icons/md';
 import Footer from '../../components/store/Footer';
 import Gallery from '../../components/store/Gallery';
 import Navbar from '../../components/store/Navbar';
 import ProductModal from '../../components/store/ProductModal';
+import SideBarDrawer from '../../components/store/SideBarDrawer';
 import { Product } from '../../utilities/interface';
 import { cartContext } from '../_app';
 
 const ProductPage: NextPage = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isOpenModal,
+    onOpen: onOpenModal,
+    onClose: onCloseModal,
+  } = useDisclosure();
+
+  const {
+    isOpen: isOpenDrawer,
+    onOpen: onOpenDrawer,
+    onClose: onCloseDrawer,
+  } = useDisclosure();
+
   const router = useRouter();
 
   const { productId } = router.query;
@@ -21,6 +38,7 @@ const ProductPage: NextPage = () => {
   const [currentProduct, setCurrentProduct] = useState<Product>();
   const [highlight, setHighlight] = useState(0);
   const [size, setSize] = useState('');
+  const [isLargerThan80em] = useMediaQuery('(min-width: 80em)');
 
   useEffect(() => {
     fetch('/data/products.json')
@@ -35,19 +53,31 @@ const ProductPage: NextPage = () => {
   return (
     <Flex
       direction="column"
-      width="60%"
+      width={['100%', '100%', '100%', '100%', '80%', '70%']}
       justifyContent="center"
       alignItems="center"
       margin="0 auto"
       gap={14}
     >
-      <Navbar />
+      <Navbar onOpen={onOpenDrawer} />
+      {!isLargerThan80em && (
+        <SideBarDrawer
+          isOpen={isOpenDrawer}
+          onClose={onCloseDrawer}
+          minimal={true}
+        />
+      )}
       <Flex width="100%">
-        <Flex justifyContent="space-around" alignItems="center" width="100%">
+        <Flex
+          justifyContent="space-around"
+          alignItems="center"
+          width="100%"
+          direction={['column', 'column', 'column', 'row']}
+        >
           {currentProduct && (
             <Gallery
               photos={currentProduct!.photos}
-              onOpen={onOpen}
+              onOpen={onOpenModal}
               highlight={highlight}
               setHighlight={setHighlight}
             />
@@ -111,65 +141,12 @@ const ProductPage: NextPage = () => {
         </Flex>
         {currentProduct && (
           <ProductModal
-            isOpen={isOpen}
-            onClose={onClose}
+            isOpen={isOpenModal}
+            onClose={onCloseModal}
             photos={currentProduct!.photos}
             highlight={highlight}
           />
         )}
-      </Flex>
-
-      <Flex
-        marginTop="120px"
-        justifyContent="space-around"
-        alignItems="center"
-        width="100%"
-      >
-        <Flex
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-          gap={3}
-        >
-          <AiOutlineTag size={40} />
-          <Text fontWeight="bold" fontSize="1.5em">
-            {"The one that you want? We've got it."}
-          </Text>
-          <Text fontSize="1.2em">Shop over 100,000 styles</Text>
-          <Text textDecoration="underline" cursor="pointer">
-            View All
-          </Text>
-        </Flex>
-        <Flex
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-          gap={3}
-        >
-          <AiOutlineStar size={40} />
-          <Text fontWeight="bold" fontSize="1.5em">
-            4.7/5 stars and 25,000+ reviews
-          </Text>
-          <Text fontSize="1.2em">You know you can trust us</Text>
-          <Text textDecoration="underline" cursor="pointer">
-            Read Reviews
-          </Text>
-        </Flex>
-        <Flex
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-          gap={3}
-        >
-          <MdOutlineLocalShipping size={40} />
-          <Text fontWeight="bold" fontSize="1.5em">
-            Free global returns collection service
-          </Text>
-          <Text fontSize="1.2em">Changed your mind? No problem</Text>
-          <Text textDecoration="underline" cursor="pointer">
-            Read More
-          </Text>
-        </Flex>
       </Flex>
 
       <Footer />

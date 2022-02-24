@@ -6,6 +6,8 @@ import {
   Tag,
   TagCloseButton,
   TagLabel,
+  useDisclosure,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -13,6 +15,7 @@ import { useEffect, useState } from 'react';
 import Footer from '../components/store/Footer';
 import Navbar from '../components/store/Navbar';
 import ProductCard from '../components/store/ProductCard';
+import SideBarDrawer from '../components/store/SideBarDrawer';
 import StoreSideBar from '../components/store/StoreSideBar';
 import { Product } from '../utilities/interface';
 
@@ -27,6 +30,9 @@ const Store: NextPage = () => {
   const [categoryFilter, setCategoryFilter] = useState('');
   const [brandFilter, setBrandFilter] = useState('');
   const [colorFilter, setColorFilter] = useState('');
+
+  const [isLargerThan80em] = useMediaQuery('(min-width: 80em)');
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [update, setUpdate] = useState(false);
 
@@ -141,20 +147,34 @@ const Store: NextPage = () => {
   return (
     <Flex
       direction="column"
-      width="60%"
+      width={['100%', '100%', '100%', '100%', '80%', '70%']}
       justifyContent="center"
       alignItems="center"
       margin="0 auto"
     >
-      <Navbar collection={String(collection)} />
-      <Flex width="100%" gap={12}>
-        <StoreSideBar
+      <Navbar collection={String(collection)} onOpen={onOpen} />
+      {!isLargerThan80em && (
+        <SideBarDrawer
           setCategoryFilter={setCategoryFilter}
           setBrandFilter={setBrandFilter}
           setColorFilter={setColorFilter}
           products={products}
+          isOpen={isOpen}
+          onClose={onClose}
+          collection={String(collection)}
+          minimal={false}
         />
-        <Box width="300px" />
+      )}
+      <Flex width="100%" gap={12}>
+        {isLargerThan80em && (
+          <StoreSideBar
+            setCategoryFilter={setCategoryFilter}
+            setBrandFilter={setBrandFilter}
+            setColorFilter={setColorFilter}
+            products={products}
+          />
+        )}
+        {isLargerThan80em && <Box width="300px" />}
         <Flex direction="column" width="100%">
           <Flex height="50px" width="100%" paddingLeft="10">
             <HStack spacing={4}>
@@ -210,7 +230,7 @@ const Store: NextPage = () => {
           </Flex>
 
           <Grid
-            templateColumns="repeat(4, 1fr)"
+            templateColumns={['1fr', '1fr', 'repeat(4, 1fr)']}
             gap={10}
             m={5}
             mr={0}

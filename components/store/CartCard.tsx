@@ -17,9 +17,10 @@ const CartCard = ({ product }: Props) => {
       alignItems="center"
       direction="column"
     >
-      <Text alignSelf="end" fontSize="0.9em">
+      <Text fontSize="0.9em" alignSelf="end">
         Import duties are included.
       </Text>
+
       <hr
         style={{
           border: '1px solid black',
@@ -47,7 +48,7 @@ const CartCard = ({ product }: Props) => {
         </Flex>
 
         <Text fontWeight="bold" fontSize="1.1em">
-          ${product.product.price}.00
+          ${product.product.price * product.quantity}.00
         </Text>
         <Flex direction="column" justifyContent="center" alignItems="center">
           <Box>
