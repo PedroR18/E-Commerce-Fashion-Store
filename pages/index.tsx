@@ -1,5 +1,6 @@
 import { Flex } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import { useEffect } from 'react';
 import Banner from '../components/Banner';
 import Contact from '../components/Contact';
 import ExclusiveList from '../components/ExclusiveList';
@@ -8,6 +9,9 @@ import SideBar from '../components/SideBar';
 import StoreFront from '../components/StoreFront';
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    document.title = 'FLEX - Home';
+  }, []);
   return (
     <Flex direction="column">
       <SideBar />

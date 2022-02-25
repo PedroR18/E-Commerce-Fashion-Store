@@ -1,4 +1,5 @@
 import { Box, Flex, Image, Select, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { cartContext } from '../../pages/_app';
 import { CartItem } from '../../utilities/interface';
@@ -9,9 +10,10 @@ interface Props {
 
 const CartCard = ({ product }: Props) => {
   const { setCart } = useContext(cartContext);
+  const router = useRouter();
   return (
     <Flex
-      width="800px"
+      width={['100%', '120%', '700px', '600px', '700px', '800px']}
       height="300px"
       justifyContent="center"
       alignItems="center"
@@ -38,6 +40,8 @@ const CartCard = ({ product }: Props) => {
           alt={product.product.name}
           width="100px"
           objectFit="contain"
+          onClick={() => router.push(`/product/${product.product.id}`)}
+          cursor="pointer"
         />
         <Flex direction="column" gap={1}>
           <Text fontWeight="bold" fontSize="1.1em">

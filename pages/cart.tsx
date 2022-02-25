@@ -13,6 +13,11 @@ const Cart: NextPage = () => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
+    document.title = `FLEX - Cart(${cart.length})`;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     if (cart) {
       setTotal(0);
       cart.forEach((el: CartItem) => {
@@ -30,11 +35,17 @@ const Cart: NextPage = () => {
         direction="column"
         justifyContent="center"
         alignItems="center"
-        width="60%"
+        width={['100%', '100%', '100%', '100%', '80%', '70%']}
         margin="0 auto"
       >
         <Navbar />
-        <Flex width="100%" gap={10} justifyContent="space-around">
+        <Flex
+          width="100%"
+          gap={10}
+          justifyContent="space-around"
+          direction={['column', 'column', 'column', 'row']}
+          alignItems="center"
+        >
           <Flex
             direction="column"
             justifyContent="space-around"

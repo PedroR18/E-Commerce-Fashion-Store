@@ -12,7 +12,7 @@ interface Props {
 const Gallery = ({ photos, onOpen, highlight, setHighlight }: Props) => {
   const [zoom, setZoom] = useState(false);
   return (
-    <Flex gap={12} justifyContent="center" alignItems="center">
+    <Flex gap={12} justifyContent="center" alignItems="center" px={4}>
       <Flex gap={5} direction="column">
         {photos &&
           photos.map((pic, i) => (

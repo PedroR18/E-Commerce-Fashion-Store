@@ -98,7 +98,7 @@ const SideBar = () => {
       >
         {slides.map((slide) => {
           return activeSlide === slide.value ? (
-            <FaCircle color="white" />
+            <FaCircle color="white" key={Math.random()} />
           ) : (
             <FaRegCircle
               color="white"
@@ -106,6 +106,7 @@ const SideBar = () => {
               onClick={() => {
                 scrollFun(slide.position);
               }}
+              key={Math.random()}
             />
           );
         })}

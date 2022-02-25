@@ -1,11 +1,4 @@
-import {
-  Button,
-  Flex,
-  Select,
-  Text,
-  useDisclosure,
-  useMediaQuery,
-} from '@chakra-ui/react';
+import { Button, Flex, Select, Text, useDisclosure } from '@chakra-ui/react';
 import moment from 'moment';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -14,7 +7,6 @@ import Footer from '../../components/store/Footer';
 import Gallery from '../../components/store/Gallery';
 import Navbar from '../../components/store/Navbar';
 import ProductModal from '../../components/store/ProductModal';
-import SideBarDrawer from '../../components/store/SideBarDrawer';
 import { Product } from '../../utilities/interface';
 import { cartContext } from '../_app';
 
@@ -25,12 +17,6 @@ const ProductPage: NextPage = () => {
     onClose: onCloseModal,
   } = useDisclosure();
 
-  const {
-    isOpen: isOpenDrawer,
-    onOpen: onOpenDrawer,
-    onClose: onCloseDrawer,
-  } = useDisclosure();
-
   const router = useRouter();
 
   const { productId } = router.query;
@@ -38,7 +24,6 @@ const ProductPage: NextPage = () => {
   const [currentProduct, setCurrentProduct] = useState<Product>();
   const [highlight, setHighlight] = useState(0);
   const [size, setSize] = useState('');
-  const [isLargerThan80em] = useMediaQuery('(min-width: 80em)');
 
   useEffect(() => {
     fetch('/data/products.json')
@@ -50,6 +35,12 @@ const ProductPage: NextPage = () => {
         setCurrentProduct(product[0]);
       });
   }, [productId]);
+
+  useEffect(() => {
+    if (currentProduct) {
+      document.title = `FLEX - ${currentProduct.name}`;
+    }
+  }, [currentProduct]);
   return (
     <Flex
       direction="column"
@@ -57,16 +48,10 @@ const ProductPage: NextPage = () => {
       justifyContent="center"
       alignItems="center"
       margin="0 auto"
-      gap={14}
+      gap={[0, 14]}
     >
-      <Navbar onOpen={onOpenDrawer} />
-      {!isLargerThan80em && (
-        <SideBarDrawer
-          isOpen={isOpenDrawer}
-          onClose={onCloseDrawer}
-          minimal={true}
-        />
-      )}
+      <Navbar />
+
       <Flex width="100%">
         <Flex
           justifyContent="space-around"
@@ -87,7 +72,7 @@ const ProductPage: NextPage = () => {
             justifyContent="center"
             alignItems="center"
             gap={4}
-            width="800px"
+            width={['100%', '800px']}
           >
             {currentProduct && (
               <>

@@ -1,7 +1,8 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
 import type { AppProps } from 'next/app';
-import { createContext, useEffect, useReducer } from 'react';
+import Head from 'next/head';
+import { createContext, useEffect, useReducer, useState } from 'react';
 import theme from '../theme/theme';
 import { ContextType } from '../utilities/interface';
 import { cartReducer } from '../utilities/reducers';
@@ -23,6 +24,14 @@ const Fonts = () => (
 export const cartContext = createContext<ContextType>(undefined!);
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setDarkMode(true);
+    }
+  }, []);
+
   useEffect(() => {
     const data = localStorage.getItem('cart');
     if (data !== undefined) {
@@ -39,6 +48,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <Fonts />
       <cartContext.Provider value={{ cart: cartState, setCart: cartDispatch }}>
+        <Head>
+          <link
+            rel="icon"
+            id="favicon-icon"
+            href={darkMode ? '/favicon-dark.ico' : '/favicon.ico'}
+          />
+        </Head>
         <Component {...pageProps} />
       </cartContext.Provider>
     </ChakraProvider>

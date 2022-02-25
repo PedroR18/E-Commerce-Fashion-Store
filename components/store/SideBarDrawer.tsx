@@ -20,7 +20,6 @@ interface Props {
   setBrandFilter?: React.Dispatch<React.SetStateAction<string>>;
   setColorFilter?: React.Dispatch<React.SetStateAction<string>>;
   products?: Product[];
-  minimal: boolean;
 }
 
 const SideBarDrawer = ({
@@ -31,7 +30,6 @@ const SideBarDrawer = ({
   setCategoryFilter,
   setBrandFilter,
   setColorFilter,
-  minimal,
 }: Props) => {
   const router = useRouter();
   return (
@@ -80,16 +78,15 @@ const SideBarDrawer = ({
               Women
             </Text>
           </Flex>
-          {minimal || (
-            <Box marginTop={10} position="absolute" left={2}>
-              <StoreSideBar
-                products={products!}
-                setCategoryFilter={setCategoryFilter!}
-                setBrandFilter={setBrandFilter!}
-                setColorFilter={setColorFilter!}
-              />
-            </Box>
-          )}
+
+          <Box marginTop={10} position="absolute" left={2}>
+            <StoreSideBar
+              products={products!}
+              setCategoryFilter={setCategoryFilter!}
+              setBrandFilter={setBrandFilter!}
+              setColorFilter={setColorFilter!}
+            />
+          </Box>
         </DrawerBody>
       </DrawerContent>
     </Drawer>

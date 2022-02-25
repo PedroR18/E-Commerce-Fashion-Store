@@ -37,6 +37,10 @@ const Store: NextPage = () => {
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
+    document.title = 'FLEX - Store';
+  }, []);
+
+  useEffect(() => {
     if (router.isReady) {
       setCategoryFilter('');
       setBrandFilter('');
@@ -162,7 +166,6 @@ const Store: NextPage = () => {
           isOpen={isOpen}
           onClose={onClose}
           collection={String(collection)}
-          minimal={false}
         />
       )}
       <Flex width="100%" gap={12}>
@@ -175,59 +178,62 @@ const Store: NextPage = () => {
           />
         )}
         {isLargerThan80em && <Box width="300px" />}
+
         <Flex direction="column" width="100%">
-          <Flex height="50px" width="100%" paddingLeft="10">
-            <HStack spacing={4}>
-              {categoryFilter && (
-                <Tag
-                  size="lg"
-                  borderRadius="full"
-                  variant="solid"
-                  key={categoryFilter}
-                >
-                  <TagLabel>{categoryFilter}</TagLabel>
-                  <TagCloseButton
-                    onClick={() => {
-                      setCategoryFilter('');
-                      setUpdate(!update);
-                    }}
-                  />
-                </Tag>
-              )}
-              {brandFilter && (
-                <Tag
-                  size="lg"
-                  borderRadius="full"
-                  variant="solid"
-                  key={brandFilter}
-                >
-                  <TagLabel>{brandFilter}</TagLabel>
-                  <TagCloseButton
-                    onClick={() => {
-                      setBrandFilter('');
-                      setUpdate(!update);
-                    }}
-                  />
-                </Tag>
-              )}
-              {colorFilter && (
-                <Tag
-                  size="lg"
-                  borderRadius="full"
-                  variant="solid"
-                  key={colorFilter}
-                >
-                  <TagLabel>{colorFilter}</TagLabel>
-                  <TagCloseButton
-                    onClick={() => {
-                      setColorFilter('');
-                      setUpdate(!update);
-                    }}
-                  />
-                </Tag>
-              )}
-            </HStack>
-          </Flex>
+          {(categoryFilter || brandFilter || colorFilter) && (
+            <Flex height="50px" width="100%" paddingLeft="10">
+              <HStack spacing={4}>
+                {categoryFilter && (
+                  <Tag
+                    size="lg"
+                    borderRadius="full"
+                    variant="solid"
+                    key={categoryFilter}
+                  >
+                    <TagLabel>{categoryFilter}</TagLabel>
+                    <TagCloseButton
+                      onClick={() => {
+                        setCategoryFilter('');
+                        setUpdate(!update);
+                      }}
+                    />
+                  </Tag>
+                )}
+                {brandFilter && (
+                  <Tag
+                    size="lg"
+                    borderRadius="full"
+                    variant="solid"
+                    key={brandFilter}
+                  >
+                    <TagLabel>{brandFilter}</TagLabel>
+                    <TagCloseButton
+                      onClick={() => {
+                        setBrandFilter('');
+                        setUpdate(!update);
+                      }}
+                    />
+                  </Tag>
+                )}
+                {colorFilter && (
+                  <Tag
+                    size="lg"
+                    borderRadius="full"
+                    variant="solid"
+                    key={colorFilter}
+                  >
+                    <TagLabel>{colorFilter}</TagLabel>
+                    <TagCloseButton
+                      onClick={() => {
+                        setColorFilter('');
+                        setUpdate(!update);
+                      }}
+                    />
+                  </Tag>
+                )}
+              </HStack>
+            </Flex>
+          )}
 
           <Grid
             templateColumns={['1fr', '1fr', 'repeat(4, 1fr)']}

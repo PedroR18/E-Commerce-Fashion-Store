@@ -5,6 +5,7 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalOverlay,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
@@ -20,8 +21,13 @@ interface Props {
 }
 
 const ProductModal = ({ isOpen, onClose, photos, highlight }: Props) => {
+  const [isLargerThan80em] = useMediaQuery('(min-width: 80em)');
   return (
-    <Modal onClose={onClose} isOpen={isOpen} size="6xl">
+    <Modal
+      onClose={onClose}
+      isOpen={isOpen}
+      size={isLargerThan80em ? '6xl' : 'full'}
+    >
       <ModalOverlay />
       <ModalContent>
         <ModalCloseButton />

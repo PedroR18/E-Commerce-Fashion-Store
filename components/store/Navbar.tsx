@@ -1,4 +1,15 @@
-import { Box, Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import { AiOutlineMenu, AiOutlineShopping } from 'react-icons/ai';
@@ -30,12 +41,14 @@ const Navbar = ({ collection, onOpen }: Props) => {
       width="100%"
       justifyContent="space-between"
       alignItems="center"
-      marginTop={14}
-      marginBottom={6}
+      marginTop={[2, 14]}
+      marginBottom={[0, 6]}
       paddingX={10}
       position="sticky"
       top={0}
       bgColor="whiteAlpha.800"
+      zIndex={100}
+      padding={4}
     >
       {isLargerThan80em ? (
         <Flex gap={10}>
@@ -74,8 +87,39 @@ const Navbar = ({ collection, onOpen }: Props) => {
             Women
           </Text>
         </Flex>
-      ) : (
+      ) : collection ? (
         <AiOutlineMenu size={30} cursor="pointer" onClick={onOpen} />
+      ) : (
+        <Menu>
+          <MenuButton as={IconButton} icon={<AiOutlineMenu size={30} />} />
+          <MenuList>
+            <MenuItem
+              _hover={{ color: 'grey' }}
+              zIndex={1000}
+              onClick={() =>
+                router.push({
+                  pathname: '/store',
+                  query: { collection: 'men' },
+                })
+              }
+            >
+              Men
+            </MenuItem>
+            <MenuItem
+              _hover={{ color: 'grey' }}
+              zIndex={1000}
+              width="100px"
+              onClick={() =>
+                router.push({
+                  pathname: '/store',
+                  query: { collection: 'women' },
+                })
+              }
+            >
+              Women
+            </MenuItem>
+          </MenuList>
+        </Menu>
       )}
       <Heading
         cursor="pointer"
@@ -83,7 +127,7 @@ const Navbar = ({ collection, onOpen }: Props) => {
         letterSpacing=".4em"
         transition=".3s ease-in"
         _hover={{ transform: 'scale(1.2)' }}
-        fontSize="5xl"
+        fontSize={['2xl', '5xl']}
         position="absolute"
         textAlign="center"
         left={0}
