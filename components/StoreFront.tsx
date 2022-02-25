@@ -19,14 +19,22 @@ const scrollFun = (to: number) => {
 const StoreFront = () => {
   const router = useRouter();
   const [pageHeight, setPageHeight] = useState(0);
+  const [fullContent, setFullContent] = useState(true);
 
   const [isLargerThan1200] = useMediaQuery('(min-width: 1200px)');
-  const [isLargerThan1600] = useMediaQuery('(min-width: 1600px)');
-  const [isLargerThan1700] = useMediaQuery('(min-width: 1700px)');
 
   useEffect(() => {
     setPageHeight(window.innerHeight);
   }, []);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!isLargerThan1200) {
+      setFullContent(false);
+    } else {
+      setFullContent(true);
+    }
+  });
 
   return (
     <Flex height="100vh" width="100vw" scrollSnapAlign="start">
@@ -35,12 +43,8 @@ const StoreFront = () => {
         height="100vh"
         position="absolute"
         left={0}
-        visibility={isLargerThan1200 ? 'visible' : 'hidden'}
-        width={
-          isLargerThan1700
-            ? '600px'
-            : ['30vw', '30vw', '30vw', '30vw', '30vw', '450px']
-        }
+        visibility={fullContent ? 'visible' : 'hidden'}
+        width={['30vw', '30vw', '30vw', '30vw', '30vw', '450px', '600px']}
       >
         <Image
           height="50%"
@@ -146,14 +150,10 @@ const StoreFront = () => {
       <Flex
         direction="column"
         height="100vh"
-        width={
-          isLargerThan1700
-            ? '600px'
-            : ['30vw', '30vw', '30vw', '30vw', '30vw', '450px']
-        }
+        width={['30vw', '30vw', '30vw', '30vw', '30vw', '450px', '600px']}
         position="absolute"
         right={0}
-        visibility={isLargerThan1200 ? 'visible' : 'hidden'}
+        visibility={fullContent ? 'visible' : 'hidden'}
       >
         <Flex height="10%" width="100%" position="relative">
           <Image
@@ -173,7 +173,7 @@ const StoreFront = () => {
             direction="column"
             position="absolute"
             top={0}
-            right={isLargerThan1600 ? -4 : [0, 0, 0, -4, -2, -20]}
+            right={[0, 0, 0, -4, -2, -4, -4]}
           >
             <Flex
               height="50%"
@@ -184,7 +184,6 @@ const StoreFront = () => {
               top={0}
               right={0}
               zIndex="100"
-              //PROBLEM
             >
               <Text
                 fontSize={['1em', '1em', '1em', '1em', '1.2em', '1.3em']}
@@ -197,7 +196,7 @@ const StoreFront = () => {
                 onClick={() => {
                   scrollFun(pageHeight * 2);
                 }}
-                position={isLargerThan1200 ? 'initial' : 'absolute'}
+                position={fullContent ? 'initial' : 'absolute'}
               >
                 STORE
               </Text>
@@ -212,7 +211,7 @@ const StoreFront = () => {
                 onClick={() => {
                   scrollFun(pageHeight * 3);
                 }}
-                position={isLargerThan1200 ? 'initial' : 'absolute'}
+                position={fullContent ? 'initial' : 'absolute'}
               >
                 EXCLUSIVE
               </Text>
@@ -227,7 +226,7 @@ const StoreFront = () => {
                 onClick={() => {
                   scrollFun(pageHeight * 4);
                 }}
-                position={isLargerThan1200 ? 'initial' : 'absolute'}
+                position={fullContent ? 'initial' : 'absolute'}
               >
                 CONTACT
               </Text>
@@ -236,20 +235,8 @@ const StoreFront = () => {
               src="lines.svg"
               alt="lines"
               position="absolute"
-              right={
-                isLargerThan1700
-                  ? -10
-                  : isLargerThan1600
-                  ? -6
-                  : [0, 0, 0, 0, -16]
-              }
-              bottom={
-                isLargerThan1700
-                  ? -100
-                  : isLargerThan1600
-                  ? -20
-                  : [-20, -20, -20, -16, -16]
-              }
+              right={[0, 0, 0, 0, -16, -10]}
+              bottom={[-20, -20, -20, -16, -16, -100]}
               loading="eager"
               zIndex={10}
             />

@@ -1,4 +1,11 @@
-import { Button, Flex, Select, Text, useDisclosure } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Select,
+  Text,
+  useDisclosure,
+  useToast,
+} from '@chakra-ui/react';
 import moment from 'moment';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -18,6 +25,7 @@ const ProductPage: NextPage = () => {
   } = useDisclosure();
 
   const router = useRouter();
+  const toast = useToast();
 
   const { productId } = router.query;
   const { setCart } = useContext(cartContext);
@@ -107,7 +115,14 @@ const ProductPage: NextPage = () => {
                         type: 'addToCart',
                         payload: { product: currentProduct, size, quantity: 1 },
                       });
-                    } else alert('SELECT A SIZE');
+                    } else {
+                      toast({
+                        title: 'Please select a valid size',
+                        variant: 'subtle',
+                        isClosable: true,
+                        position: 'top',
+                      });
+                    }
                   }}
                 >
                   Add to Cart

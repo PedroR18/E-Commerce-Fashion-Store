@@ -1,12 +1,10 @@
-import { Box, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 const GenreSeparator = () => {
   const router = useRouter();
   const [active, setActive] = useState<'left' | 'right' | undefined>(undefined);
-  const [isLargerThan1700] = useMediaQuery('(min-width: 1700px)');
-  const [isLargerThan1900] = useMediaQuery('(min-width: 1900px)');
 
   return (
     <Flex
@@ -37,13 +35,16 @@ const GenreSeparator = () => {
           minHeight={['50vh', '50vh', '50vh', '100vh']}
         >
           <Image
-            align={
-              isLargerThan1900
-                ? '0 -300px'
-                : isLargerThan1700
-                ? '0 -100px'
-                : ['0 -100px', '0 -150px', '0 -250px', '-100px 0', '0 0', '0 0']
-            }
+            align={[
+              '0 -100px',
+              '0 -150px',
+              '0 -250px',
+              '-100px 0',
+              '0 0',
+              '0 0',
+              '0 -100px',
+              '0 -300px',
+            ]}
             src="/home-female.png"
             alt="female"
             minHeight="100%"
@@ -93,13 +94,16 @@ const GenreSeparator = () => {
           <Image
             src="/home-male.png"
             alt="male"
-            align={
-              isLargerThan1900
-                ? '0 -350px'
-                : isLargerThan1700
-                ? '0 -200px'
-                : ['0 -100px', '0 -150px', '0 -350px', '0 0', '0 0', '0 -150px']
-            }
+            align={[
+              '0 -100px',
+              '0 -150px',
+              '0 -350px',
+              '0 0',
+              '0 0',
+              '0 -150px',
+              '0 -200px',
+              '0 -350px',
+            ]}
             minHeight="100%"
             objectFit="cover"
             transform={active === 'right' ? 'scale(1.1)' : 'none'}
