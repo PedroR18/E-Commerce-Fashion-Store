@@ -34,11 +34,12 @@ const CartCard = ({ product }: Props) => {
         alignItems="center"
         width="100%"
         marginTop="4"
+        gap={1}
       >
         <Image
           src={product.product.photos[0]}
           alt={product.product.name}
-          width="100px"
+          width={['80px', '80px', '100px']}
           objectFit="contain"
           onClick={() => router.push(`/product/${product.product.id}`)}
           cursor="pointer"
@@ -92,30 +93,3 @@ const CartCard = ({ product }: Props) => {
   );
 };
 export default CartCard;
-
-{
-  /* <Image
-src={product.product.photos[0]}
-alt={product.product.name}
-width="40%"
-height="90%"
-objectFit="contain"
-/>
-<Flex
-direction="column"
-width="50%"
-height="100%"
-justifyContent="center"
-alignItems="center"
->
-<Text>{product.product.brand}</Text>
-<Text>{product.product.name}</Text>
-<Text>Quantity: {product.quantity}</Text>
-
-
-<Text>Size: {product.size.toUpperCase()}</Text>
-<Text>
-  $ {Number(product.product.price) * Number(product.quantity)}
-</Text>
-</Flex> */
-}
