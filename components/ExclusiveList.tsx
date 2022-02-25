@@ -39,7 +39,7 @@ const ExclusiveList = () => {
         justifyContent="space-around"
         height="100%"
         width="100%"
-        gap={16}
+        gap={2}
       >
         <Flex
           width="90%"
@@ -47,6 +47,8 @@ const ExclusiveList = () => {
           justifyContent="center"
           direction="column"
           gap={2}
+          t
+          marginTop={10}
         >
           <Text
             fontSize={['2.3em', '2.3em', '2.5em', '3.5em']}

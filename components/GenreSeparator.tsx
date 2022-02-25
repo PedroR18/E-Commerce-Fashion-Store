@@ -41,7 +41,7 @@ const GenreSeparator = () => {
                 ? '0 -300px'
                 : isLargerThan1700
                 ? '0 -100px'
-                : ['0 0', '0 -150px', '0 -250px', '-100px 0', '0 0', '0 0']
+                : ['0 -100px', '0 -150px', '0 -250px', '-100px 0', '0 0', '0 0']
             }
             src="/home-female.png"
             alt="female"
@@ -97,7 +97,7 @@ const GenreSeparator = () => {
                 ? '0 -350px'
                 : isLargerThan1700
                 ? '0 -200px'
-                : ['0 0', '0 -150px', '0 -350px', '0 0', '0 0', '0 -150px']
+                : ['0 -100px', '0 -150px', '0 -350px', '0 0', '0 0', '0 -150px']
             }
             minHeight="100%"
             objectFit="cover"

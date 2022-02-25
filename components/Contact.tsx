@@ -1,4 +1,4 @@
-import { Flex, Heading, Image, Text } from '@chakra-ui/react';
+import { Flex, Heading, Image, Text, useMediaQuery } from '@chakra-ui/react';
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -7,6 +7,7 @@ import {
 } from 'react-icons/ai';
 
 const Contact = () => {
+  const [isLargerThan30em] = useMediaQuery('(min-width: 30em)');
   return (
     <Flex
       height="100vh"
@@ -34,14 +35,34 @@ const Contact = () => {
         alignItems="center"
         gap={5}
       >
-        <Text color="white" fontSize={['3em', '3em', '4em']} textAlign="center">
+        <Text
+          color="white"
+          fontSize={['2em', '3em', '3em', '4em']}
+          textAlign="center"
+        >
           {`Don't miss anything`.toUpperCase()}
         </Text>
         <Flex justifyContent="center" alignItems="center" gap={10}>
-          <AiFillFacebook color="white" size={60} cursor="pointer" />
-          <AiFillTwitterSquare color="white" size={60} cursor="pointer" />
-          <AiFillInstagram color="white" size={60} cursor="pointer" />
-          <AiFillLinkedin color="white" size={60} cursor="pointer" />
+          <AiFillFacebook
+            color="white"
+            size={isLargerThan30em ? 60 : 40}
+            cursor="pointer"
+          />
+          <AiFillTwitterSquare
+            color="white"
+            size={isLargerThan30em ? 60 : 40}
+            cursor="pointer"
+          />
+          <AiFillInstagram
+            color="white"
+            size={isLargerThan30em ? 60 : 40}
+            cursor="pointer"
+          />
+          <AiFillLinkedin
+            color="white"
+            size={isLargerThan30em ? 60 : 40}
+            cursor="pointer"
+          />
         </Flex>
       </Flex>
       <Heading

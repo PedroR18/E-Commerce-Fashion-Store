@@ -15,7 +15,7 @@ const Cart: NextPage = () => {
   useEffect(() => {
     document.title = `FLEX - Cart(${cart.length})`;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  });
 
   useEffect(() => {
     if (cart) {

@@ -38,7 +38,7 @@ const Store: NextPage = () => {
 
   useEffect(() => {
     document.title = 'FLEX - Store';
-  }, []);
+  });
 
   useEffect(() => {
     if (router.isReady) {

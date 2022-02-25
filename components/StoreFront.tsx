@@ -1,4 +1,11 @@
-import { Box, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { AiOutlineDown } from 'react-icons/ai';
@@ -94,6 +101,13 @@ const StoreFront = () => {
           padding={10}
           zIndex={100}
         >
+          <Heading
+            fontSize={['4.5em', '5em', '6em', '6.5em', '6.5em', '8em']}
+            letterSpacing=".5em"
+            marginLeft=".6em"
+          >
+            FLEX
+          </Heading>
           <Text fontSize="2.5em" textAlign="center">
             DRESS TO IMPRESS
           </Text>
