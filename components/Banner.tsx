@@ -35,15 +35,13 @@ const Banner = () => {
         onMouseLeave={() => setActive(false)}
       >
         <Heading
-          color={active ? 'white' : 'transparent'}
+          color={'white'}
           fontSize={['4em', '6em', '7em', '11em']}
           letterSpacing=".5em"
           marginLeft=".5em"
           transition=".4s ease-in"
           zIndex={100}
           style={{
-            WebkitTextStrokeWidth: active ? '0' : '1px',
-            WebkitTextStrokeColor: 'white',
             transform: active ? 'scale(1.25)' : '',
           }}
         >

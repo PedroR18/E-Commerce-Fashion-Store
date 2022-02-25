@@ -47,7 +47,6 @@ const ExclusiveList = () => {
           justifyContent="center"
           direction="column"
           gap={2}
-          t
           marginTop={10}
         >
           <Text

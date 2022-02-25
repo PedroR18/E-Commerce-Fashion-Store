@@ -7,6 +7,7 @@ const GenreSeparator = () => {
   const [active, setActive] = useState<'left' | 'right' | undefined>(undefined);
   const [isLargerThan1700] = useMediaQuery('(min-width: 1700px)');
   const [isLargerThan1900] = useMediaQuery('(min-width: 1900px)');
+
   return (
     <Flex
       width="100vw"

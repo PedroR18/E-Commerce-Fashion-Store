@@ -8,6 +8,7 @@ import {
 
 const Contact = () => {
   const [isLargerThan30em] = useMediaQuery('(min-width: 30em)');
+
   return (
     <Flex
       height="100vh"

@@ -1,4 +1,4 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { FaCircle, FaRegCircle } from 'react-icons/fa';
 
@@ -7,15 +7,26 @@ interface Slide {
   position: number;
 }
 
-const scrollFun = (to: number) => {
-  if (typeof window !== undefined) {
-    window.scrollTo(0, to);
-  }
-};
-
 const SideBar = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [slides, setSlides] = useState<Slide[]>([]);
+
+  const scrollFun = (to: number) => {
+    if (typeof window !== undefined) {
+      if (to === 0) {
+        setActiveSlide(0);
+      } else if (to === window.innerHeight) {
+        setActiveSlide(1);
+      } else if (to === window.innerHeight * 2) {
+        setActiveSlide(2);
+      } else if (to === window.innerHeight * 3) {
+        setActiveSlide(3);
+      } else if (to === window.innerHeight * 4) {
+        setActiveSlide(4);
+      }
+      window.scrollTo(0, to);
+    }
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -53,13 +64,13 @@ const SideBar = () => {
 
   return (
     <Flex
-      bgColor="blackAlpha.600"
+      bgColor="blackAlpha.700"
       width={['50px', '50px', '100px']}
       height="100vh"
       position="fixed"
       left={0}
       justifyContent="center"
-      zIndex={100}
+      zIndex={100000}
       transition=".3s ease-in"
       visibility={['hidden', 'hidden', 'visible']}
     >
@@ -100,14 +111,15 @@ const SideBar = () => {
           return activeSlide === slide.value ? (
             <FaCircle color="white" key={Math.random()} />
           ) : (
-            <FaRegCircle
-              color="white"
-              cursor="pointer"
+            <Box
               onClick={() => {
                 scrollFun(slide.position);
               }}
               key={Math.random()}
-            />
+              zIndex="1000"
+            >
+              <FaRegCircle color="white" cursor="pointer" />
+            </Box>
           );
         })}
       </Flex>

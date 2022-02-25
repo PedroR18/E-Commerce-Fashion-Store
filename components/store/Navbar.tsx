@@ -121,6 +121,7 @@ const Navbar = ({ collection, onOpen }: Props) => {
           </MenuList>
         </Menu>
       )}
+
       <Heading
         cursor="pointer"
         onClick={() => router.push('/')}
@@ -133,9 +134,12 @@ const Navbar = ({ collection, onOpen }: Props) => {
         left={0}
         right={0}
         zIndex={-100}
+        width="300px"
+        marginX="auto"
       >
         FLEX
       </Heading>
+
       <Box
         height="30px"
         width="30px"

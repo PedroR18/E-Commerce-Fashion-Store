@@ -19,6 +19,7 @@ const scrollFun = (to: number) => {
 const StoreFront = () => {
   const router = useRouter();
   const [pageHeight, setPageHeight] = useState(0);
+
   const [isLargerThan1200] = useMediaQuery('(min-width: 1200px)');
   const [isLargerThan1600] = useMediaQuery('(min-width: 1600px)');
   const [isLargerThan1700] = useMediaQuery('(min-width: 1700px)');
