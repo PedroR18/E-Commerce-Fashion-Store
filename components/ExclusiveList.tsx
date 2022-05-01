@@ -74,8 +74,8 @@ const ExclusiveList = () => {
         </Flex>
 
         <Flex
-          height={['400px', '450px', '500px', '610px', '650px']}
-          width={['400px', '450px', '500px', '610px', '650px']}
+          height={['350px', '450px', '500px', '610px', '650px']}
+          width={['350px', '450px', '500px', '610px', '650px']}
           position="relative"
           mt={[16, 16, 16, 0]}
           justifyContent="start"
@@ -126,8 +126,8 @@ const ExclusiveList = () => {
             'rotate(90deg)',
             'none',
           ]}
-          right={[28, 10, 10, 10, 10, -36, 100]}
-          top={[14, -16, -16, -40, -64, 0]}
+          right={[100, 10, 150, 10, 10, -36, 100]}
+          top={[14, -16, -6, -40, -64, 0]}
         />
       </Flex>
     </Flex>
