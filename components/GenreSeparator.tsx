@@ -45,7 +45,7 @@ const GenreSeparator = () => {
               '0 -100px',
               '0 -300px',
             ]}
-            src="/home-female.png"
+            src="/home-female.webp"
             alt="female"
             minHeight="100%"
             objectFit="cover"
@@ -92,7 +92,7 @@ const GenreSeparator = () => {
           minHeight={['50vh', '50vh', '50vh', '100vh']}
         >
           <Image
-            src="/home-male.png"
+            src="/home-male.webp"
             alt="male"
             align={[
               '0 -100px',

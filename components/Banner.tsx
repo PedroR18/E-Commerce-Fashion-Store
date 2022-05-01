@@ -20,7 +20,7 @@ const Banner = () => {
         overflow="hidden"
       >
         <Image
-          src="/banner.png"
+          src="/banner.webp"
           alt="Model"
           minHeight="100%"
           minWidth="100%"

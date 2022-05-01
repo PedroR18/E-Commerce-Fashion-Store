@@ -20,7 +20,7 @@ const Contact = () => {
       position="relative"
     >
       <Image
-        src="/contact-background.png"
+        src="/contact-background.webp"
         alt="Background Texture"
         minHeight="100%"
         minWidth="100%"

@@ -11,127 +11,127 @@ const ExclusiveListGrid = () => {
       zIndex={0}
     >
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />
       <GridItem
-        bgImage="url(/ex-list-grid.png)"
+        bgImage="url(/ex-list-grid.webp)"
         bgSize="cover"
         filter="grayscale(1)"
       />

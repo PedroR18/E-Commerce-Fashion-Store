@@ -95,7 +95,7 @@ const ExclusiveList = () => {
           <ExclusiveListGrid />
           <Fade in={reveal}>
             <Image
-              src="/ex-list-grid.png"
+              src="/ex-list-grid.webp"
               alt="Man with golden chain"
               position="absolute"
               top={0}
@@ -111,7 +111,7 @@ const ExclusiveList = () => {
           </Fade>
         </Flex>
         <Image
-          src="/exclusive-texture.png"
+          src="/exclusive-texture.webp"
           alt="Rose"
           height={['500px', '800px', '800px', '800px', '1000px']}
           width={['300px', '500px', '500px', '500px', '700px']}

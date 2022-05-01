@@ -51,7 +51,7 @@ const StoreFront = () => {
           width="100%"
           maxHeight="50%"
           alt="Female Model"
-          src="/store-front-female.png"
+          src="/store-front-female.webp"
           objectFit="cover"
           loading="eager"
         />
@@ -60,7 +60,7 @@ const StoreFront = () => {
             height="130%"
             width="30%"
             alt="Red Roses"
-            src="/store-front-flowers.png"
+            src="/store-front-flowers.webp"
             objectFit="cover"
             maxHeight="130%"
             position="relative"
@@ -71,7 +71,7 @@ const StoreFront = () => {
             height="100%"
             width="70%"
             alt="Paper Texture"
-            src="/store-front-paper.png"
+            src="/store-front-paper.webp"
             objectFit="cover"
             maxHeight="100%"
             loading="eager"
@@ -88,7 +88,7 @@ const StoreFront = () => {
       >
         <Image
           alt="Floral Background"
-          src="/store-front-main.png"
+          src="/store-front-main.webp"
           position="absolute"
           height="100%"
           objectFit="cover"
@@ -161,7 +161,7 @@ const StoreFront = () => {
             zIndex={10}
             width="30%"
             alt="Tropical Vegetation"
-            src="/store-front-tropical.png"
+            src="/store-front-tropical.webp"
             objectFit="cover"
             loading="eager"
             position="absolute"
@@ -243,7 +243,7 @@ const StoreFront = () => {
           </Flex>
         </Flex>
         <Image
-          src="store-front-paper.png"
+          src="store-front-paper.webp"
           alt="Paper Texture"
           objectFit="cover"
           height="40%"
@@ -256,7 +256,7 @@ const StoreFront = () => {
         <Image
           height="90%"
           width="100%"
-          src="store-front-male.png"
+          src="store-front-male.webp"
           alt="Male Model"
           objectFit="cover"
           maxHeight="90%"
